@@ -1,0 +1,589 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Learning Data Structures and Algorithms</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Learn Data Structures and Algorithms in Rust - YouTube Series Outline">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Arrays and Vectors</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Linked Lists</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Stacks and Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Learning Data Structures and Algorithms</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction-to-data-structures-and-algorithms"><a class="header" href="#introduction-to-data-structures-and-algorithms">Introduction to Data Structures and Algorithms</a></h1>
+<h2 id="hello-world"><a class="header" href="#hello-world">Hello World!</a></h2>
+<p>Hello human! Thanks for reading this book on Data Structures and Algorithms. I hope you enjoy it!</p>
+<p>This book is written by the lovely <a href="https://x.com/codingwithjamal">CodingWithJamal</a>. It's a written version of
+the YouTube series <a href="https://www.youtube.com/playlist?list=PLl0-VFGqwyIvRpNnBcypGKITG2gRip1QD">Data Structures and Algorithms in Rust - YouTube Series</a>.</p>
+<h2 id="what-you-will-learn"><a class="header" href="#what-you-will-learn">What You Will Learn</a></h2>
+<p>In this series, you will:</p>
+<ul>
+<li>Gain a solid understanding of fundamental data structures and algorithms.</li>
+<li>Learn how to analyze and evaluate the efficiency of algorithms using Big O Notation.</li>
+<li>See practical implementations of these concepts in Rust, a modern systems programming language.</li>
+</ul>
+<h2 id="why-data-structures-and-algorithms"><a class="header" href="#why-data-structures-and-algorithms">Why Data Structures and Algorithms?</a></h2>
+<p>Data structures and algorithms form the backbone of computer science. They are essential for:</p>
+<ul>
+<li>Efficient problem-solving.</li>
+<li>Writing optimized code.</li>
+<li>Preparing for technical interviews and competitive programming.</li>
+</ul>
+<h2 id="why-rust"><a class="header" href="#why-rust">Why Rust?</a></h2>
+<p>Rust is a modern systems programming language and its strong type system makes it
+ideal for learning data structures and algorithms.</p>
+<h2 id="course-outline"><a class="header" href="#course-outline">Course Outline</a></h2>
+<p>Here is a brief overview of what we will cover in this series:</p>
+<ol>
+<li><strong>Getting Started with Rust</strong>: Setting up your environment and writing basic programs.</li>
+<li><strong>Understanding Big O Notation</strong>: Learning about time complexity and analyzing algorithms.</li>
+<li><strong>Arrays and Vectors</strong>: Working with these basic data structures.</li>
+<li><strong>Linked Lists</strong>: Exploring singly and doubly linked lists.</li>
+<li><strong>Stacks and Queues</strong>: Understanding these fundamental structures.</li>
+<li><strong>Hash Maps and Hash Sets</strong>: Diving into hashing and its applications.</li>
+<li><strong>Binary Trees</strong>: Learning about tree structures and their properties.</li>
+<li><strong>Binary Search Trees</strong>: Understanding and implementing BSTs.</li>
+<li><strong>Heaps and Priority Queues</strong>: Working with heaps and priority queues.</li>
+<li><strong>Graphs and Graph Algorithms</strong>: Exploring graph structures and basic algorithms.</li>
+<li><strong>Sorting Algorithms</strong>: Understanding and implementing common sorting techniques.</li>
+<li><strong>Searching Algorithms</strong>: Exploring linear and binary search methods.</li>
+<li><strong>Dynamic Programming</strong>: Learning about memoization and tabulation.</li>
+<li><strong>Recursion and Backtracking</strong>: Understanding these powerful techniques.</li>
+<li><strong>Final Project</strong>: Building a comprehensive project that integrates multiple concepts.</li>
+</ol>
+<h2 id="getting-ready"><a class="header" href="#getting-ready">Getting Ready</a></h2>
+<p>Before we dive into the technical content, make sure you have the following:</p>
+<ul>
+<li>A computer with an internet connection.</li>
+<li>Basic knowledge of programming (experience with any language is a plus).</li>
+<li>The willingness to learn and experiment.</li>
+</ul>
+<p>Stay tuned for the next lesson, where we will set up our Rust environment and write our first Rust program. This journey will be challenging but rewarding, and by the end of this series, you will have a deep understanding of data structures and algorithms and how to implement them in Rust.</p>
+<p>Thank you for joining me, and I look forward to embarking on this learning journey with you!</p>
+<hr />
+<p>Feel free to reach out if you have any questions or need further assistance. Happy learning!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
+<p>Lets walk through how to setup the Rust development environment and write our first Rust program.</p>
+<h2 id="installing-rust"><a class="header" href="#installing-rust">Installing Rust</a></h2>
+<p>To start coding in Rust, you need to install the Rust programming language and its associated tools.</p>
+<h3 id="step-1-install-rust"><a class="header" href="#step-1-install-rust">Step 1: Install Rust</a></h3>
+<ol>
+<li>
+<p>Open your terminal.</p>
+</li>
+<li>
+<p>Run the following command to install Rust using <code>rustup</code>, the Rust toolchain installer:</p>
+<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+</code></pre>
+</li>
+<li>
+<p>Follow the on-screen instructions to complete the installation.</p>
+</li>
+</ol>
+<h3 id="step-2-configure-your-environment"><a class="header" href="#step-2-configure-your-environment">Step 2: Configure Your Environment</a></h3>
+<p>After installing Rust, you need to configure your development environment.</p>
+<ol>
+<li>
+<p>Add the Rust bin directory to your system's PATH:</p>
+<pre><code class="language-sh">source $HOME/.cargo/env
+</code></pre>
+</li>
+<li>
+<p>Verify the installation by checking the Rust version:</p>
+<pre><code class="language-sh">rustc --version
+</code></pre>
+</li>
+</ol>
+<h2 id="writing-your-first-rust-program"><a class="header" href="#writing-your-first-rust-program">Writing Your First Rust Program</a></h2>
+<p>Now that we have Rust installed, let's write our first Rust program.</p>
+<h3 id="step-1-create-a-new-project"><a class="header" href="#step-1-create-a-new-project">Step 1: Create a New Project</a></h3>
+<ol>
+<li>
+<p>Open your terminal.</p>
+</li>
+<li>
+<p>Create a new Rust project using <code>cargo</code>, Rust's package manager and build system:</p>
+<pre><code class="language-sh">cargo new hello_rust
+</code></pre>
+</li>
+<li>
+<p>Navigate to the project directory:</p>
+<pre><code class="language-sh">cd hello_rust
+</code></pre>
+</li>
+</ol>
+<h3 id="step-2-write-the-code"><a class="header" href="#step-2-write-the-code">Step 2: Write the Code</a></h3>
+<ol>
+<li>
+<p>Open the <code>main.rs</code> file located in the <code>src</code> directory with your preferred code editor.</p>
+</li>
+<li>
+<p>Replace the content with the following code:</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("Hello, Rust!");
+}</code></pre></pre>
+</li>
+</ol>
+<h3 id="step-3-run-the-program"><a class="header" href="#step-3-run-the-program">Step 3: Run the Program</a></h3>
+<ol>
+<li>
+<p>Compile and run your Rust program using <code>cargo</code>:</p>
+<pre><code class="language-sh">cargo run
+</code></pre>
+</li>
+<li>
+<p>You should see the following output:</p>
+<pre><code class="language-sh">Hello, Rust!
+</code></pre>
+</li>
+</ol>
+<h2 id="basic-syntax-and-features-of-rust"><a class="header" href="#basic-syntax-and-features-of-rust">Basic Syntax and Features of Rust</a></h2>
+<p>Let's briefly go over some basic syntax and features of Rust.</p>
+<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
+<p>Rust variables are immutable by default. Use <code>let</code> to declare variables.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let x = 5;
+println!("The value of x is: {}", x);
+<span class="boring">}</span></code></pre></pre>
+<p>To make a variable mutable, use mut.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let mut y = 5;
+y = 6;
+println!("The value of y is: {}", y);
+<span class="boring">}</span></code></pre></pre>
+<h3 id="functions"><a class="header" href="#functions">Functions</a></h3>
+<p>Functions are declared using the fn keyword.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    println!("Hello, Rust!");
+}
+
+fn add(a: i32, b: i32) -&gt; i32 {
+    a + b
+}</code></pre></pre>
+<h3 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h3>
+<p>Rust supports typical control flow constructs such as if, else, and loop.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>let number = 6;
+
+if number % 2 == 0 {
+    println!("The number is even.");
+} else {
+    println!("The number is odd.");
+}
+
+let mut counter = 0;
+let result = loop {
+    counter += 1;
+    if counter == 10 {
+        break counter * 2;
+    }
+};
+println!("The result is: {}", result);
+<span class="boring">}</span></code></pre></pre>
+<h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
+<p>In this episode, we've set up the Rust development environment, explored some basic syntax and features of Rust, and wrote our first Rust program. In the next episode, we will dive into understanding Big O Notation and analyzing time complexity.</p>
+<p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next episode!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="understanding-big-o-notation"><a class="header" href="#understanding-big-o-notation">Understanding Big O Notation</a></h1>
+<h2 id="introduction-1"><a class="header" href="#introduction-1">Introduction</a></h2>
+<p>In this lesson, we will explore the concept of Big O Notation, which is a fundamental tool for analyzing the efficiency of algorithms.
+By analyzing the efficiency of algorithms, we can identify performance bottlenecks in our code and make informed decisions about which algorithm to use based on the context and constraints.</p>
+<h2 id="what-is-big-o-notation"><a class="header" href="#what-is-big-o-notation">What is Big O Notation?</a></h2>
+<p>Big O Notation is a mathematical representation used to describe the time complexity and space complexity of an algorithm. It provides a high-level understanding of how an algorithm's runtime or space requirements grow relative to the input size.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
+<ul>
+<li><strong>Time Complexity</strong>: Describes how the runtime of an algorithm changes as the input size increases.</li>
+<li><strong>Space Complexity</strong>: Describes how the memory usage of an algorithm changes as the input size increases.</li>
+<li><strong>Asymptotic Analysis</strong>: Focuses on the behavior of an algorithm as the input size approaches infinity.</li>
+</ul>
+<h2 id="common-big-o-notations"><a class="header" href="#common-big-o-notations">Common Big O Notations</a></h2>
+<p>Let's look at some common Big O Notations and what they mean in terms of algorithm efficiency.</p>
+<h3 id="o1---constant-time"><a class="header" href="#o1---constant-time">O(1) - Constant Time</a></h3>
+<p>An algorithm with O(1) complexity runs in constant time, regardless of the input size.</p>
+<p>Constant Time means that the time it takes for the algorithm to complete does not change regardless of the size of the input.
+In other words, whether you have 10 elements or 10 million elements, the algorithm will take the same amount of time.</p>
+<p>Think of Constant Time like looking up a specific page in a phone book by going straight to that page. It doesn't matter how thick the phone book is; finding the page takes the same amount of time because you go directly to it without needing to check the other pages.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers = vec![10, 20, 30, 40, 50];
+
+    let first = get_first_element(&amp;numbers);
+
+    println!("The first element is: {}", first);
+}
+
+fn get_first_element(vec: &amp;Vec&lt;i32&gt;) -&gt; i32 {
+    vec[0] // Accessing the first element is a constant-time operation
+}</code></pre></pre>
+<p>In the main Function: We create a vector <code>numbers</code> with five elements. We then call <code>get_first_element</code>, which retrieves the first element of the vector. No matter how many elements are in the vector, the time it takes to get the first element remains constant.</p>
+<p>Function <code>get_first_element</code>: This function takes a reference to a vector vec and returns the first element. Accessing an element by index in a vector is a constant-time operation because it directly accesses the memory location without needing to look through the entire vector.</p>
+<h3 id="on---linear-time"><a class="header" href="#on---linear-time">O(n) - Linear Time</a></h3>
+<p>An algorithm with O(n) complexity runs in linear time, meaning the runtime grows linearly with the input size.</p>
+<p>Linear Time means that as the size of the input increases, the time it takes for the algorithm to complete increases proportionally. If the input size doubles, the time taken also roughly doubles.</p>
+<p>Think of Linear Time like searching for a book in a library where the books are arranged in a single line. If you need to check each book one by one to find the one you're looking for, the time it takes will increase directly with the number of books you need to check.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers = vec![10, 20, 30, 40, 50];
+    let target = 30;
+
+    let found = find_element(&amp;numbers, target);
+
+    println!("Element found: {}", found);
+}
+
+fn find_element(vec: &amp;Vec&lt;i32&gt;, target: i32) -&gt; bool {
+    for &amp;item in vec.iter() {
+        if item == target {
+            return true; // Found the target
+        }
+    }
+    false // Target not found
+}</code></pre></pre>
+<p>In the main Function: We create a vector <code>numbers</code> and call <code>find_element</code> to check if a specific number is present. The time taken to complete this operation depends on the number of elements in the vector.</p>
+<p>Function <code>find_element</code>: This function takes a reference to a vector <code>vec</code> and a <code>target</code> number. It iterates through each element in the vector using a <code>for</code> loop. The time it takes to find the target increases linearly with the size of the vector.</p>
+<h3 id="on2---quadratic-time"><a class="header" href="#on2---quadratic-time">O(n^2) - Quadratic Time</a></h3>
+<p>An algorithm with O(n^2) complexity runs in quadratic time, meaning the runtime grows quadratically with the input size.</p>
+<p>Quadratic Time means that if the size of the input doubles, the time it takes to run the algorithm will roughly increase by a factor of fou. This happens because the algorithm involves nested loops where each loop iterates over the size of the input.</p>
+<p>Imagine you need to compare each pair of students in a class to find out which ones have the same birthday. If there are <code>n</code> students, you would need to perform <code>n * (n - 1) / 2</code> comparisons (approximately <code>n^2</code> comparisons) to ensure every pair is checked. As the number of students increases, the number of comparisons grows significantly.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut numbers = vec![64, 25, 12, 22, 11];
+
+    bubble_sort(&amp;mut numbers);
+
+    println!("Sorted array: {:?}", numbers);
+}
+
+fn bubble_sort(arr: &amp;mut Vec&lt;i32&gt;) {
+    let n = arr.len();
+    for i in 0..n {
+        for j in 0..n - 1 - i {
+            if arr[j] &gt; arr[j + 1] {
+                arr.swap(j, j + 1);
+            }
+        }
+    }
+}</code></pre></pre>
+<p>In the main Function: We create a vector <code>numbers</code> and sort it using the <code>bubble_sort</code> function. The sorting operation's time complexity is O(n^2).</p>
+<p>Function <code>bubble_sort</code>: This function takes a mutable reference to a vector <code>arr</code> and sorts it using the bubble sort algorithm. The time complexity is quadratic because for each element in the outer loop, the inner loop iterates over most of the elements, resulting in roughly <code>n * (n - 1) / 2</code> comparisons and swaps.</p>
+<h3 id="olog-n---logarithmic-time"><a class="header" href="#olog-n---logarithmic-time">O(log n) - Logarithmic Time</a></h3>
+<p>An algorithm with O(log n) complexity runs in logarithmic time, meaning the runtime grows logarithmically with the input size.
+This is common in algorithms that divide the problem in half each step, such as binary search.</p>
+<p>Logarithmic Time means that as the input size doubles, the time required to complete the algorithm increases by a constant amount, rather than doubling.
+This is because the algorithm reduces the problem size significantly with each step.</p>
+<p>Imagine you're looking for a name in a phone book that is organized alphabetically. If you start in the middle and determine whether the name you're looking for is before or after that point, you effectively cut the number of names you need to search through in half with each step. This makes the search much faster compared to looking through every name one by one.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let numbers = vec![10, 20, 30, 40, 50];
+    let target = 30;
+
+    match binary_search(&amp;numbers, target) {
+        Some(index) =&gt; println!("Element found at index: {}", index),
+        None =&gt; println!("Element not found"),
+    }
+}
+
+fn binary_search(arr: &amp;Vec&lt;i32&gt;, target: i32) -&gt; Option&lt;usize&gt; {
+    let mut left = 0;
+    let mut right = arr.len() as isize - 1;
+
+    while left &lt;= right {
+        let mid = (left + right) / 2;
+        let mid_value = arr[mid as usize];
+
+        if mid_value == target {
+            return Some(mid as usize);
+        } else if mid_value &lt; target {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+
+    None // Target not found
+}</code></pre></pre>
+<p>In the main Function: We create a sorted vector <code>numbers</code> and use <code>binary_search</code> to find the target. The search operation's time complexity is O(log n).</p>
+<p>Function <code>binary_search</code>: This function performs a binary search on a sorted vector <code>arr</code> to find the <code>target</code> value. The time complexity is logarithmic because the search is performed in half each step. It starts with the entire array (<code>left</code> to <code>right</code>). In each iteration, it calculates the midpoint and compares the <code>target</code> with the midpoint value. If the <code>target</code> is less than the midpoint, the search continues in the left half of the array. If the target is greater than the midpoint, the search continues in the right half of the array.</p>
+<h3 id="on-log-n---linearithmic-time"><a class="header" href="#on-log-n---linearithmic-time">O(n log n) - Linearithmic Time</a></h3>
+<p>An algorithm with O(n log n) complexity runs in linearithmic time, which is typical of efficient sorting algorithms like Merge Sort and Quick Sort.</p>
+<p>Linearithmic Time means that the algorithm's runtime increases faster than Linear Time but slower than Quadratic Time.
+It grows proportionally to the size of the input multiplied by the logarithm of the size of the input.</p>
+<p>Imagine you have a large stack of unsorted papers that you want to sort. You divide the stack into smaller stacks, sort each smaller stack individually, and then combine them back together in order. The process of dividing, sorting, and merging each stack grows in a way that reflects Linearithmic Time complexity.</p>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+    let mut numbers = vec![38, 27, 43, 3, 9, 82, 10];
+
+    merge_sort(&amp;mut numbers);
+    println!("Sorted array: {:?}", numbers);
+}
+
+fn merge_sort(arr: &amp;mut Vec&lt;i32&gt;) {
+    let len = arr.len();
+    if len &lt;= 1 {
+        return;
+    }
+
+    let mid = len / 2;
+    let mut left = arr[..mid].to_vec();
+    let mut right = arr[mid..].to_vec();
+
+    merge_sort(&amp;mut left);
+    merge_sort(&amp;mut right);
+
+    merge(arr, &amp;left, &amp;right);
+}
+
+fn merge(arr: &amp;mut Vec&lt;i32&gt;, left: &amp;Vec&lt;i32&gt;, right: &amp;Vec&lt;i32&gt;) {
+    let mut left_idx = 0;
+    let mut right_idx = 0;
+    let mut arr_idx = 0;
+
+    while left_idx &lt; left.len() &amp;&amp; right_idx &lt; right.len() {
+        if left[left_idx] &lt;= right[right_idx] {
+            arr[arr_idx] = left[left_idx];
+            left_idx += 1;
+        } else {
+            arr[arr_idx] = right[right_idx];
+            right_idx += 1;
+        }
+        arr_idx += 1;
+    }
+
+    while left_idx &lt; left.len() {
+        arr[arr_idx] = left[left_idx];
+        left_idx += 1;
+        arr_idx += 1;
+    }
+
+    while right_idx &lt; right.len() {
+        arr[arr_idx] = right[right_idx];
+        right_idx += 1;
+        arr_idx += 1;
+    }
+}</code></pre></pre>
+<p>In the main Function: We create a vector numbers and sort it using merge_sort. The sorting operation's time complexity is O(n log n).</p>
+<p>Function <code>merge_sort</code>: This function performs the Merge Sort algorithm. It recursively divides the vector into two halves until each half is trivially sorted (i.e., has one or zero elements). It then merges the sorted halves using the <code>merge</code> function. The time complexity of the merge_sort function is O(n log n).</p>
+<p>Function <code>merge</code>: This function merges two sorted arrays <code>left</code> and <code>right</code> into a single sorted array <code>arr</code>. The time complexity of the merge function is O(n).</p>
+<h2 id="why-is-big-o-notation-important"><a class="header" href="#why-is-big-o-notation-important">Why is Big O Notation Important?</a></h2>
+<p>Understanding Big O Notation helps you:</p>
+<ul>
+<li>Evaluate and compare the efficiency of different algorithms.</li>
+<li>Identify performance bottlenecks in your code.</li>
+<li>Make informed decisions about which algorithm to use based on the context and constraints.</li>
+</ul>
+<h3 id="conclusion-1"><a class="header" href="#conclusion-1">Conclusion</a></h3>
+<p>In this lesson, we've introduced Big O Notation and discussed its importance in analyzing algorithm efficiency. We also covered some common Big O Notations with Rust code examples. In the next lesson, we will dive into arrays and vectors, exploring their properties and usage in Rust.</p>
+<p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next lesson!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="contact"><a class="header" href="#contact">Contact</a></h1>
+<p>Please contact me if you have any questions, feedback, or suggestions. Im active on all social media below.</p>
+<ul>
+<li><a href="https://x.com/codingwithjamal">Twitter</a></li>
+<li><a href="https://github.com/ThatGuyJamal">GitHub</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

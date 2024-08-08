@@ -1,0 +1,273 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Learning Data Structures and Algorithms</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="Learn Data Structures and Algorithms in Rust - YouTube Series Outline">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> Arrays and Vectors</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Linked Lists</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Stacks and Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Learning Data Structures and Algorithms</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction-to-data-structures-and-algorithms"><a class="header" href="#introduction-to-data-structures-and-algorithms">Introduction to Data Structures and Algorithms</a></h1>
+<h2 id="hello-world"><a class="header" href="#hello-world">Hello World!</a></h2>
+<p>Hello human! Thanks for reading this book on Data Structures and Algorithms. I hope you enjoy it!</p>
+<p>This book is written by the lovely <a href="https://x.com/codingwithjamal">CodingWithJamal</a>. It's a written version of
+the YouTube series <a href="https://www.youtube.com/playlist?list=PLl0-VFGqwyIvRpNnBcypGKITG2gRip1QD">Data Structures and Algorithms in Rust - YouTube Series</a>.</p>
+<h2 id="what-you-will-learn"><a class="header" href="#what-you-will-learn">What You Will Learn</a></h2>
+<p>In this series, you will:</p>
+<ul>
+<li>Gain a solid understanding of fundamental data structures and algorithms.</li>
+<li>Learn how to analyze and evaluate the efficiency of algorithms using Big O Notation.</li>
+<li>See practical implementations of these concepts in Rust, a modern systems programming language.</li>
+</ul>
+<h2 id="why-data-structures-and-algorithms"><a class="header" href="#why-data-structures-and-algorithms">Why Data Structures and Algorithms?</a></h2>
+<p>Data structures and algorithms form the backbone of computer science. They are essential for:</p>
+<ul>
+<li>Efficient problem-solving.</li>
+<li>Writing optimized code.</li>
+<li>Preparing for technical interviews and competitive programming.</li>
+</ul>
+<h2 id="why-rust"><a class="header" href="#why-rust">Why Rust?</a></h2>
+<p>Rust is a modern systems programming language and its strong type system makes it
+ideal for learning data structures and algorithms.</p>
+<h2 id="course-outline"><a class="header" href="#course-outline">Course Outline</a></h2>
+<p>Here is a brief overview of what we will cover in this series:</p>
+<ol>
+<li><strong>Getting Started with Rust</strong>: Setting up your environment and writing basic programs.</li>
+<li><strong>Understanding Big O Notation</strong>: Learning about time complexity and analyzing algorithms.</li>
+<li><strong>Arrays and Vectors</strong>: Working with these basic data structures.</li>
+<li><strong>Linked Lists</strong>: Exploring singly and doubly linked lists.</li>
+<li><strong>Stacks and Queues</strong>: Understanding these fundamental structures.</li>
+<li><strong>Hash Maps and Hash Sets</strong>: Diving into hashing and its applications.</li>
+<li><strong>Binary Trees</strong>: Learning about tree structures and their properties.</li>
+<li><strong>Binary Search Trees</strong>: Understanding and implementing BSTs.</li>
+<li><strong>Heaps and Priority Queues</strong>: Working with heaps and priority queues.</li>
+<li><strong>Graphs and Graph Algorithms</strong>: Exploring graph structures and basic algorithms.</li>
+<li><strong>Sorting Algorithms</strong>: Understanding and implementing common sorting techniques.</li>
+<li><strong>Searching Algorithms</strong>: Exploring linear and binary search methods.</li>
+<li><strong>Dynamic Programming</strong>: Learning about memoization and tabulation.</li>
+<li><strong>Recursion and Backtracking</strong>: Understanding these powerful techniques.</li>
+<li><strong>Final Project</strong>: Building a comprehensive project that integrates multiple concepts.</li>
+</ol>
+<h2 id="getting-ready"><a class="header" href="#getting-ready">Getting Ready</a></h2>
+<p>Before we dive into the technical content, make sure you have the following:</p>
+<ul>
+<li>A computer with an internet connection.</li>
+<li>Basic knowledge of programming (experience with any language is a plus).</li>
+<li>The willingness to learn and experiment.</li>
+</ul>
+<p>Stay tuned for the next lesson, where we will set up our Rust environment and write our first Rust program. This journey will be challenging but rewarding, and by the end of this series, you will have a deep understanding of data structures and algorithms and how to implement them in Rust.</p>
+<p>Thank you for joining me, and I look forward to embarking on this learning journey with you!</p>
+<hr />
+<p>Feel free to reach out if you have any questions or need further assistance. Happy learning!</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next prefetch" href="lessons/1.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next prefetch" href="lessons/1.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

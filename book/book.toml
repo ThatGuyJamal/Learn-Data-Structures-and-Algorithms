@@ -1,0 +1,13 @@
+[book]
+title = "Learning Data Structures and Algorithms"
+description = "Learn Data Structures and Algorithms in Rust - YouTube Series Outline"
+authors = ["CodingWithJamal"]
+language = "en"
+multilingual = true
+src = "src"
+
+[build]
+create-missing = false
+
+[output.html.search]
+limit-results = 15
