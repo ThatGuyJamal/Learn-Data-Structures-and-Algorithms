@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -147,6 +147,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/1.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -226,16 +232,12 @@
 </ol>
 <h3 id="step-2-write-the-code"><a class="header" href="#step-2-write-the-code">Step 2: Write the Code</a></h3>
 <ol>
-<li>
-<p>Open the <code>main.rs</code> file located in the <code>src</code> directory with your preferred code editor.</p>
-</li>
-<li>
-<p>Replace the content with the following code:</p>
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    println!("Hello, Rust!");
-}</code></pre></pre>
-</li>
+<li>Open the <code>main.rs</code> file located in the <code>src</code> directory with your preferred code editor.</li>
+<li>Replace the content with the following code:</li>
 </ol>
+<pre><pre class="playground"><code class="language-rust">fn main() {
+   println!("Hello, Rust!");
+}</code></pre></pre>
 <h3 id="step-3-run-the-program"><a class="header" href="#step-3-run-the-program">Step 3: Run the Program</a></h3>
 <ol>
 <li>
@@ -256,13 +258,16 @@
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let x = 5;
+
 println!("The value of x is: {}", x);
 <span class="boring">}</span></code></pre></pre>
 <p>To make a variable mutable, use mut.</p>
 <pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let mut y = 5;
+
 y = 6;
+
 println!("The value of y is: {}", y);
 <span class="boring">}</span></code></pre></pre>
 <h3 id="functions"><a class="header" href="#functions">Functions</a></h3>
@@ -294,6 +299,35 @@ let result = loop {
     }
 };
 println!("The result is: {}", result);
+<span class="boring">}</span></code></pre></pre>
+<h3 id="comments"><a class="header" href="#comments">Comments</a></h3>
+<p>Rust supports single-line and multi-line comments.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// This is a single-line comment
+
+/* This is a
+multi-line comment
+*/
+<span class="boring">}</span></code></pre></pre>
+<h3 id="data-types"><a class="header" href="#data-types">Data Types</a></h3>
+<p>Rust supports several data types, including integers, floating-point numbers, booleans, strings, arrays, and tuples.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>// i32 is an integer type
+let x: i32 = 5;
+
+// &amp;str is a string slice
+let a: &amp;str = "Hello, Rust!";
+
+// [i32; 3] is an array of 3 integers
+let b: [i32; 3] = [1, 2, 3];
+
+// (i32, &amp;str) is a tuple of an integer and a string
+let c: (i32, &amp;str) = (1, "hello");
+
+// bool is a boolean type
+let d: bool = true;
 <span class="boring">}</span></code></pre></pre>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In this episode, we've set up the Rust development environment, explored some basic syntax and features of Rust, and wrote our first Rust program. In the next episode, we will dive into understanding Big O Notation and analyzing time complexity.</p>
@@ -330,11 +364,19 @@ println!("The result is: {}", result);
 
 
 
+        <script>
+            window.playground_line_numbers = true;
+        </script>
 
         <script>
             window.playground_copyable = true;
         </script>
 
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
 
         <script src="../elasticlunr.min.js"></script>
         <script src="../mark.min.js"></script>

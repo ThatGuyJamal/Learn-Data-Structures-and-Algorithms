@@ -36,7 +36,7 @@
         <!-- Provide site root to javascript -->
         <script>
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "coal" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -147,6 +147,12 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/2.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
 
                     </div>
                 </div>
@@ -175,23 +181,21 @@
                     <main>
                         <h1 id="understanding-big-o-notation"><a class="header" href="#understanding-big-o-notation">Understanding Big O Notation</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>In this lesson, we will explore the concept of Big O Notation, which is a fundamental tool for analyzing the efficiency of algorithms.
-By analyzing the efficiency of algorithms, we can identify performance bottlenecks in our code and make informed decisions about which algorithm to use based on the context and constraints.</p>
+<p>In this lesson, we'll explore Big O Notation, a key tool for analyzing algorithm efficiency. Understanding Big O helps us identify performance bottlenecks and choose the right algorithm for specific contexts.</p>
 <h2 id="what-is-big-o-notation"><a class="header" href="#what-is-big-o-notation">What is Big O Notation?</a></h2>
-<p>Big O Notation is a mathematical representation used to describe the time complexity and space complexity of an algorithm. It provides a high-level understanding of how an algorithm's runtime or space requirements grow relative to the input size.</p>
+<p>Big O Notation is a mathematical way to describe an algorithm's time and space complexity, giving us a high-level view of how its performance scales with input size.</p>
 <h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
 <ul>
-<li><strong>Time Complexity</strong>: Describes how the runtime of an algorithm changes as the input size increases.</li>
-<li><strong>Space Complexity</strong>: Describes how the memory usage of an algorithm changes as the input size increases.</li>
-<li><strong>Asymptotic Analysis</strong>: Focuses on the behavior of an algorithm as the input size approaches infinity.</li>
+<li><strong>Time Complexity</strong>: How the runtime changes with input size.</li>
+<li><strong>Space Complexity</strong>: How memory usage changes with input size.</li>
+<li><strong>Asymptotic Analysis</strong>: Behavior of an algorithm as input size approaches infinity.</li>
 </ul>
 <h2 id="common-big-o-notations"><a class="header" href="#common-big-o-notations">Common Big O Notations</a></h2>
 <p>Let's look at some common Big O Notations and what they mean in terms of algorithm efficiency.</p>
 <h3 id="o1---constant-time"><a class="header" href="#o1---constant-time">O(1) - Constant Time</a></h3>
 <p>An algorithm with O(1) complexity runs in constant time, regardless of the input size.</p>
-<p>Constant Time means that the time it takes for the algorithm to complete does not change regardless of the size of the input.
-In other words, whether you have 10 elements or 10 million elements, the algorithm will take the same amount of time.</p>
 <p>Think of Constant Time like looking up a specific page in a phone book by going straight to that page. It doesn't matter how thick the phone book is; finding the page takes the same amount of time because you go directly to it without needing to check the other pages.</p>
+<p>Imagine looking up a specific page in a phone book by going directly to it—no matter how thick the book is, it takes the same time because you skip straight to the page.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let numbers = vec![10, 20, 30, 40, 50];
 
@@ -203,12 +207,12 @@ In other words, whether you have 10 elements or 10 million elements, the algorit
 fn get_first_element(vec: &amp;Vec&lt;i32&gt;) -&gt; i32 {
     vec[0] // Accessing the first element is a constant-time operation
 }</code></pre></pre>
-<p>In the main Function: We create a vector <code>numbers</code> with five elements. We then call <code>get_first_element</code>, which retrieves the first element of the vector. No matter how many elements are in the vector, the time it takes to get the first element remains constant.</p>
-<p>Function <code>get_first_element</code>: This function takes a reference to a vector vec and returns the first element. Accessing an element by index in a vector is a constant-time operation because it directly accesses the memory location without needing to look through the entire vector.</p>
+<p>The <code>main</code> function creates a vector <code>numbers</code> and calls <code>get_first_element</code> to retrieve the first element. The time to get the first element is constant, no matter how many elements are in the vector.</p>
+<p>The <code>get_first_element</code> function accesses the first element directly, which is a constant-time operation since it directly accesses the memory location.</p>
 <h3 id="on---linear-time"><a class="header" href="#on---linear-time">O(n) - Linear Time</a></h3>
 <p>An algorithm with O(n) complexity runs in linear time, meaning the runtime grows linearly with the input size.</p>
-<p>Linear Time means that as the size of the input increases, the time it takes for the algorithm to complete increases proportionally. If the input size doubles, the time taken also roughly doubles.</p>
-<p>Think of Linear Time like searching for a book in a library where the books are arranged in a single line. If you need to check each book one by one to find the one you're looking for, the time it takes will increase directly with the number of books you need to check.</p>
+<p>Linear Time means the runtime increases proportionally with the input size. If the input size doubles, the time taken roughly doubles.</p>
+<p>Imagine searching for a book in a single line of books—you have to check each one. The time to find your book increases directly with the number of books.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let numbers = vec![10, 20, 30, 40, 50];
     let target = 30;
@@ -226,12 +230,12 @@ fn find_element(vec: &amp;Vec&lt;i32&gt;, target: i32) -&gt; bool {
     }
     false // Target not found
 }</code></pre></pre>
-<p>In the main Function: We create a vector <code>numbers</code> and call <code>find_element</code> to check if a specific number is present. The time taken to complete this operation depends on the number of elements in the vector.</p>
-<p>Function <code>find_element</code>: This function takes a reference to a vector <code>vec</code> and a <code>target</code> number. It iterates through each element in the vector using a <code>for</code> loop. The time it takes to find the target increases linearly with the size of the vector.</p>
+<p>The <code>main</code> function creates a vector <code>numbers</code> and calls <code>find_element</code> to check if a number is present. The time taken depends on the number of elements in the vector.</p>
+<p>The <code>find_element</code> function iterates through each element to find the target. The time increases linearly with the vector's size.</p>
 <h3 id="on2---quadratic-time"><a class="header" href="#on2---quadratic-time">O(n^2) - Quadratic Time</a></h3>
 <p>An algorithm with O(n^2) complexity runs in quadratic time, meaning the runtime grows quadratically with the input size.</p>
-<p>Quadratic Time means that if the size of the input doubles, the time it takes to run the algorithm will roughly increase by a factor of fou. This happens because the algorithm involves nested loops where each loop iterates over the size of the input.</p>
-<p>Imagine you need to compare each pair of students in a class to find out which ones have the same birthday. If there are <code>n</code> students, you would need to perform <code>n * (n - 1) / 2</code> comparisons (approximately <code>n^2</code> comparisons) to ensure every pair is checked. As the number of students increases, the number of comparisons grows significantly.</p>
+<p>Quadratic Time means that if the input size doubles, the runtime will roughly quadruple. This occurs because the algorithm involves nested loops, each iterating over the input size.</p>
+<p>Imagine comparing each pair of students in a class to find those with the same birthday. If there are <code>n</code> students, you would need to perform <code>n * (n - 1) / 2</code> comparisons (approximately <code>n^2</code> comparisons) to check every pair. As the number of students increases, the number of comparisons grows significantly.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let mut numbers = vec![64, 25, 12, 22, 11];
 
@@ -250,14 +254,12 @@ fn bubble_sort(arr: &amp;mut Vec&lt;i32&gt;) {
         }
     }
 }</code></pre></pre>
-<p>In the main Function: We create a vector <code>numbers</code> and sort it using the <code>bubble_sort</code> function. The sorting operation's time complexity is O(n^2).</p>
-<p>Function <code>bubble_sort</code>: This function takes a mutable reference to a vector <code>arr</code> and sorts it using the bubble sort algorithm. The time complexity is quadratic because for each element in the outer loop, the inner loop iterates over most of the elements, resulting in roughly <code>n * (n - 1) / 2</code> comparisons and swaps.</p>
+<p>The <code>main</code> function creates a vector <code>numbers</code> and sorts it using the <code>bubble_sort</code> function. The sorting operation has a time complexity of O(n^2).</p>
+<p>The <code>bubble_sort</code> function takes a mutable reference to a vector <code>arr</code> and sorts it using the bubble sort algorithm. The time complexity is quadratic because the outer loop iterates over each element, while the inner loop compares and swaps adjacent elements, resulting in roughly <code>n * (n - 1) / 2</code> comparisons and swaps.</p>
 <h3 id="olog-n---logarithmic-time"><a class="header" href="#olog-n---logarithmic-time">O(log n) - Logarithmic Time</a></h3>
-<p>An algorithm with O(log n) complexity runs in logarithmic time, meaning the runtime grows logarithmically with the input size.
-This is common in algorithms that divide the problem in half each step, such as binary search.</p>
-<p>Logarithmic Time means that as the input size doubles, the time required to complete the algorithm increases by a constant amount, rather than doubling.
-This is because the algorithm reduces the problem size significantly with each step.</p>
-<p>Imagine you're looking for a name in a phone book that is organized alphabetically. If you start in the middle and determine whether the name you're looking for is before or after that point, you effectively cut the number of names you need to search through in half with each step. This makes the search much faster compared to looking through every name one by one.</p>
+<p>An algorithm with O(log n) complexity runs in logarithmic time, meaning the runtime grows logarithmically with the input size. This is common in algorithms that divide the problem in half with each step, such as binary search.</p>
+<p>Logarithmic Time means that as the input size doubles, the runtime increases by a constant amount rather than doubling. This is because the algorithm significantly reduces the problem size with each step.</p>
+<p>Imagine you're searching for a name in a phone book organized alphabetically. If you start in the middle and determine whether the name you're looking for is before or after that point, you effectively cut the search space in half with each step, making the search much faster than checking each name one by one.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let numbers = vec![10, 20, 30, 40, 50];
     let target = 30;
@@ -287,12 +289,11 @@ fn binary_search(arr: &amp;Vec&lt;i32&gt;, target: i32) -&gt; Option&lt;usize&gt
 
     None // Target not found
 }</code></pre></pre>
-<p>In the main Function: We create a sorted vector <code>numbers</code> and use <code>binary_search</code> to find the target. The search operation's time complexity is O(log n).</p>
-<p>Function <code>binary_search</code>: This function performs a binary search on a sorted vector <code>arr</code> to find the <code>target</code> value. The time complexity is logarithmic because the search is performed in half each step. It starts with the entire array (<code>left</code> to <code>right</code>). In each iteration, it calculates the midpoint and compares the <code>target</code> with the midpoint value. If the <code>target</code> is less than the midpoint, the search continues in the left half of the array. If the target is greater than the midpoint, the search continues in the right half of the array.</p>
+<p>The <code>main</code> function creates a sorted vector <code>numbers</code> and uses <code>binary_search</code> to find the target. The search operation has a time complexity of O(log n).</p>
+<p>The <code>binary_search</code> function performs a binary search on a sorted vector <code>arr</code> to find the <code>target</code> value. The time complexity is logarithmic because the search space is halved with each step. It starts with the entire array (from <code>left</code> to <code>right</code>). In each iteration, it calculates the midpoint and compares the <code>target</code> with the midpoint value. If the <code>target</code> is less than the midpoint, the search continues in the left half; if it's greater, the search continues in the right half.</p>
 <h3 id="on-log-n---linearithmic-time"><a class="header" href="#on-log-n---linearithmic-time">O(n log n) - Linearithmic Time</a></h3>
 <p>An algorithm with O(n log n) complexity runs in linearithmic time, which is typical of efficient sorting algorithms like Merge Sort and Quick Sort.</p>
-<p>Linearithmic Time means that the algorithm's runtime increases faster than Linear Time but slower than Quadratic Time.
-It grows proportionally to the size of the input multiplied by the logarithm of the size of the input.</p>
+<p>Linearithmic Time means that the algorithm's runtime increases faster than Linear Time but slower than Quadratic Time. It grows proportionally to the size of the input multiplied by the logarithm of the size of the input.</p>
 <p>Imagine you have a large stack of unsorted papers that you want to sort. You divide the stack into smaller stacks, sort each smaller stack individually, and then combine them back together in order. The process of dividing, sorting, and merging each stack grows in a way that reflects Linearithmic Time complexity.</p>
 <pre><pre class="playground"><code class="language-rust">fn main() {
     let mut numbers = vec![38, 27, 43, 3, 9, 82, 10];
@@ -345,9 +346,9 @@ fn merge(arr: &amp;mut Vec&lt;i32&gt;, left: &amp;Vec&lt;i32&gt;, right: &amp;Ve
         arr_idx += 1;
     }
 }</code></pre></pre>
-<p>In the main Function: We create a vector numbers and sort it using merge_sort. The sorting operation's time complexity is O(n log n).</p>
-<p>Function <code>merge_sort</code>: This function performs the Merge Sort algorithm. It recursively divides the vector into two halves until each half is trivially sorted (i.e., has one or zero elements). It then merges the sorted halves using the <code>merge</code> function. The time complexity of the merge_sort function is O(n log n).</p>
-<p>Function <code>merge</code>: This function merges two sorted arrays <code>left</code> and <code>right</code> into a single sorted array <code>arr</code>. The time complexity of the merge function is O(n).</p>
+<p>In the <code>main</code> function: We create a vector <code>numbers</code> and sort it using <code>merge_sort</code>. The sorting operation's time complexity is O(n log n).</p>
+<p>Function <code>merge_sort</code>: This function performs the Merge Sort algorithm. It recursively divides the vector into two halves until each half is trivially sorted (i.e., has one or zero elements). It then merges the sorted halves using the <code>merge</code> function. The time complexity of the <code>merge_sort</code> function is O(n log n).</p>
+<p>Function <code>merge</code>: This function merges two sorted arrays <code>left</code> and <code>right</code> into a single sorted array <code>arr</code>. The time complexity of the <code>merge</code> function is O(n).</p>
 <h2 id="why-is-big-o-notation-important"><a class="header" href="#why-is-big-o-notation-important">Why is Big O Notation Important?</a></h2>
 <p>Understanding Big O Notation helps you:</p>
 <ul>
@@ -357,7 +358,7 @@ fn merge(arr: &amp;mut Vec&lt;i32&gt;, left: &amp;Vec&lt;i32&gt;, right: &amp;Ve
 </ul>
 <h3 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h3>
 <p>In this lesson, we've introduced Big O Notation and discussed its importance in analyzing algorithm efficiency. We also covered some common Big O Notations with Rust code examples. In the next lesson, we will dive into arrays and vectors, exploring their properties and usage in Rust.</p>
-<p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next lesson!</p>
+<p>Thank you for joining me on this journey to learn Rust and computer science concepts. Stay tuned for the next lesson!</p>
 
                     </main>
 
@@ -390,11 +391,19 @@ fn merge(arr: &amp;mut Vec&lt;i32&gt;, left: &amp;Vec&lt;i32&gt;, right: &amp;Ve
 
 
 
+        <script>
+            window.playground_line_numbers = true;
+        </script>
 
         <script>
             window.playground_copyable = true;
         </script>
 
+        <script src="../ace.js"></script>
+        <script src="../editor.js"></script>
+        <script src="../mode-rust.js"></script>
+        <script src="../theme-dawn.js"></script>
+        <script src="../theme-tomorrow_night.js"></script>
 
         <script src="../elasticlunr.min.js"></script>
         <script src="../mark.min.js"></script>

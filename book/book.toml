@@ -9,5 +9,30 @@ src = "src"
 [build]
 create-missing = false
 
+[output.html]
+preferred-dark-theme = "Coal"
+git-repository-url = "https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms"
+edit-url-template = "https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/{path}"
+
 [output.html.search]
-limit-results = 15
+enable = true           # enables the search feature
+limit-results = 15      # maximum number of search results
+teaser-word-count = 30  # number of words used for a search result teaser
+use-boolean-and = true  # multiple search terms must all match
+boost-title = 2         # ranking boost factor for matches in headers
+boost-hierarchy = 1     # ranking boost factor for matches in page names
+boost-paragraph = 1     # ranking boost factor for matches in text
+expand = true           # partial words will match longer terms
+heading-split-level = 3 # link results to heading levels
+copy-js = true          # include Javascript code for search
+
+[output.html.print]
+enable = true     # include support for printable output
+page-break = true # insert page-break after each chapter
+
+[output.html.playground]
+editable = true     # allows editing the source code
+copyable = true     # include the copy button for copying code snippets
+copy-js = true      # includes the JavaScript for the code editor
+line-numbers = true # displays line numbers for editable code
+runnable = true     # displays a run button for rust code
