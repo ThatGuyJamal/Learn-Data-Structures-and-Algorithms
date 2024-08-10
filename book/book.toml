@@ -1,15 +1,19 @@
 # https://rust-lang.github.io/mdBook/format/configuration/index.html
 
 [book]
-title = "Learning Data Structures and Algorithms"
-description = "Learn Data Structures and Algorithms in Rust - YouTube Series Outline"
+title = "Learn Data Structures and Algorithms"
+description = "Learn the fundamentals of Data Structures and Algorithms using Rust"
 authors = ["CodingWithJamal"]
 language = "en"
-multilingual = true
+multilingual = false
 src = "src"
 
 [build]
-create-missing = true
+build-dir = "../docs"            # the output directory of the website
+create-missing = true            # whether or not to create missing pages
+use-default-preprocessors = true # use the default preprocessors
+extra-watch-dirs = []            # directories to watch for triggering builds
+
 
 [output.html]
 preferred-dark-theme = "Ayu"
