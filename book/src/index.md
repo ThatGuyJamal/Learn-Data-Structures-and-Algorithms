@@ -2,9 +2,9 @@
 
 ## Hello World!
 
-Hello human! Thanks for reading this book on Data Structures and Algorithms. I hope you enjoy it!
+Thanks for reading this book on Data Structures and Algorithms. I hope you enjoy it!
 
-This book is written by the lovely [CodingWithJamal](https://x.com/codingwithjamal). It's a written version of
+This book is written by [CodingWithJamal](https://x.com/codingwithjamal). It's a `text` version of
 the YouTube series [Data Structures and Algorithms in Rust - YouTube Series](https://www.youtube.com/playlist?list=PLl0-VFGqwyIvRpNnBcypGKITG2gRip1QD).
 
 ## What You Will Learn
