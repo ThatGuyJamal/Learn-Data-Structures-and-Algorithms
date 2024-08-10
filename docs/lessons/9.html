@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Arrays and Vectors - Learning Data Structures and Algorithms</title>
+        <title>Graphs and Graph Algorithms - Learning Data Structures and Algorithms</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html" class="active"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html" class="active"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -150,7 +150,7 @@
                         <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/3.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/9.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -179,118 +179,168 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="arrays-and-vectors"><a class="header" href="#arrays-and-vectors">Arrays and Vectors</a></h1>
+                        <h1 id="graphs-and-graph-algorithms"><a class="header" href="#graphs-and-graph-algorithms">Graphs and Graph Algorithms</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>In this lesson, we'll explore arrays and vectors, their properties and usage in Rust.</p>
-<h2 id="key-points"><a class="header" href="#key-points">Key Points</a></h2>
+<p>In this lesson, we'll explore graphs and graph algorithms, their properties, and their usage in Rust. Graphs are fundamental data structures used in various applications such as social networks, routing algorithms, and more.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
 <ul>
-<li>Arrays: A collection of elements of the same type.</li>
-<li>Vectors: A resizable array that stores elements of the same type.</li>
+<li><strong>Graphs</strong>: A collection of nodes (vertices) and edges connecting pairs of nodes.</li>
+<li><strong>Graph Algorithms</strong>: Techniques to traverse, search, and analyze graphs.</li>
 </ul>
-<h3 id="arrays"><a class="header" href="#arrays">Arrays</a></h3>
-<p>An array is a data structure that stores elements of the same type in contiguous memory locations.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
+<h2 id="graphs"><a class="header" href="#graphs">Graphs</a></h2>
+<p>A graph is a data structure that consists of nodes (vertices) and edges connecting pairs of nodes. There are different types of graphs:</p>
+<ul>
+<li><strong>Undirected Graph</strong>: Edges have no direction; the connection between nodes is bidirectional.</li>
+<li><strong>Directed Graph (Digraph)</strong>: Edges have a direction; the connection between nodes is unidirectional.</li>
+<li><strong>Weighted Graph</strong>: Edges have weights or costs associated with them.</li>
+<li><strong>Unweighted Graph</strong>: Edges do not have weights.</li>
+</ul>
+<h3 id="basic-graph-implementation"><a class="header" href="#basic-graph-implementation">Basic Graph Implementation</a></h3>
+<p>Here’s a basic implementation of an undirected graph in Rust using adjacency lists:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
 
-println!("Array: {:?}", arr);
-<span class="boring">}</span></code></pre></pre>
-<p>Accessing Elements of an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-let first = arr[0];
-let last = arr[arr.len() - 1];
-
-println!("First element: {}", first);
-println!("Last element: {}", last);
-<span class="boring">}</span></code></pre></pre>
-<p>Iterating Over an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-for i in arr.iter() {
-    println!("{}", i);
+#[derive(Debug)]
+struct Graph {
+    adj_list: HashMap&lt;u32, Vec&lt;u32&gt;&gt;,
 }
-<span class="boring">}</span></code></pre></pre>
-<p>Common Operations on Arrays</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
 
-let slice = &amp;arr[1..4];
+impl Graph {
+    fn new() -&gt; Self {
+        Graph {
+            adj_list: HashMap::new(),
+        }
+    }
 
-println!("Slice: {:?}", slice);
+    fn add_edge(&amp;mut self, u: u32, v: u32) {
+        self.adj_list.entry(u).or_insert_with(Vec::new).push(v);
+        self.adj_list.entry(v).or_insert_with(Vec::new).push(u);
+    }
 
-let reversed = arr.iter().rev().collect::&lt;Vec&lt;_&gt;&gt;();
+    fn print(&amp;self) {
+        for (node, edges) in &amp;self.adj_list {
+            println!("Node {}: {:?}", node, edges);
+        }
+    }
+}
 
-println!("Reversed: {:?}", reversed);
+fn main() {
+    let mut graph = Graph::new();
+    graph.add_edge(1, 2);
+    graph.add_edge(2, 3);
+    graph.add_edge(3, 4);
 
-let mut doubled = arr.iter().map(|x| x * 2).collect::&lt;Vec&lt;_&gt;&gt;();
-
-println!("Doubled: {:?}", doubled);
-<span class="boring">}</span></code></pre></pre>
+    graph.print();
+}</code></pre></pre>
+<h3 id="code-explanation"><a class="header" href="#code-explanation">Code Explanation</a></h3>
 <ul>
-<li>Slicing: Get a pointer to a range of elements in an array.</li>
-<li>Reverse: Reverse the order of elements in an array.</li>
-<li>Doubled: Double each element in an array. The <code>map</code> method applies a function to each element in an array and returns a new array with the results. The <code>collect</code> method collects the results into a vector.</li>
+<li><strong><code>add_edge</code></strong>: Adds an undirected edge between two nodes.</li>
+<li><strong><code>print</code></strong>: Displays the adjacency list of the graph.</li>
 </ul>
-<h2 id="vectors"><a class="header" href="#vectors">Vectors</a></h2>
-<p>A vector is a resizable array that stores elements of the same type.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
+<h2 id="graph-algorithms"><a class="header" href="#graph-algorithms">Graph Algorithms</a></h2>
+<h3 id="depth-first-search-dfs"><a class="header" href="#depth-first-search-dfs">Depth-First Search (DFS)</a></h3>
+<p>Depth-First Search (DFS) is an algorithm for traversing or searching through a graph. It explores as far down a branch as possible before backtracking.</p>
+<p>Here’s a DFS implementation in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::{HashMap, HashSet};
 
-println!("Vector: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
-<p>Adding and Removing Elements from a Vector</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
+fn dfs(graph: &amp;HashMap&lt;u32, Vec&lt;u32&gt;&gt;, start: u32, visited: &amp;mut HashSet&lt;u32&gt;) {
+    if visited.contains(&amp;start) {
+        return;
+    }
+    visited.insert(start);
+    println!("Visited: {}", start);
 
-vec.push(6);
-vec.push(7);
+    if let Some(neighbors) = graph.get(&amp;start) {
+        for &amp;neighbor in neighbors {
+            dfs(graph, neighbor, visited);
+        }
+    }
+}
 
-println!("Added: {:?}", vec);
+fn main() {
+    let mut graph = HashMap::new();
+    graph.insert(1, vec![2, 3]);
+    graph.insert(2, vec![1, 4]);
+    graph.insert(3, vec![1, 4]);
+    graph.insert(4, vec![2, 3]);
 
-vec.pop();
-
-println!("Removed: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
+    let mut visited = HashSet::new();
+    dfs(&amp;graph, 1, &amp;mut visited);
+}</code></pre></pre>
+<h3 id="code-explanation-1"><a class="header" href="#code-explanation-1">Code Explanation</a></h3>
 <ul>
-<li>Push: Add an element to the end of a vector.</li>
-<li>Pop: Remove the last element from a vector.</li>
+<li><strong><code>dfs</code></strong>: Recursively visits nodes, marking them as visited, and explores all neighbors.</li>
 </ul>
-<p>Many other the operations on vectors are similar to those on arrays. See the <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html">Rust documentation</a> for more information.</p>
-<h2 id="when-do-we-use-arrays-vs-vectors"><a class="header" href="#when-do-we-use-arrays-vs-vectors">When do we use Arrays vs. Vectors?</a></h2>
+<h3 id="breadth-first-search-bfs"><a class="header" href="#breadth-first-search-bfs">Breadth-First Search (BFS)</a></h3>
+<p>Breadth-First Search (BFS) is an algorithm for traversing or searching through a graph. It explores all nodes at the present depth level before moving on to nodes at the next depth level.</p>
+<p>Here’s a BFS implementation in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::{HashMap, HashSet, VecDeque};
+
+fn bfs(graph: &amp;HashMap&lt;u32, Vec&lt;u32&gt;&gt;, start: u32) {
+    let mut visited = HashSet::new();
+    let mut queue = VecDeque::new();
+
+    visited.insert(start);
+    queue.push_back(start);
+
+    while let Some(node) = queue.pop_front() {
+        println!("Visited: {}", node);
+
+        if let Some(neighbors) = graph.get(&amp;node) {
+            for &amp;neighbor in neighbors {
+                if !visited.contains(&amp;neighbor) {
+                    visited.insert(neighbor);
+                    queue.push_back(neighbor);
+                }
+            }
+        }
+    }
+}
+
+fn main() {
+    let mut graph = HashMap::new();
+    graph.insert(1, vec![2, 3]);
+    graph.insert(2, vec![1, 4]);
+    graph.insert(3, vec![1, 4]);
+    graph.insert(4, vec![2, 3]);
+
+    bfs(&amp;graph, 1);
+}</code></pre></pre>
+<h3 id="code-explanation-2"><a class="header" href="#code-explanation-2">Code Explanation</a></h3>
 <ul>
-<li>
-<p><code>Arrays</code> are ideal when you know the number of elements at compile time and this number won’t change. For example, storing the days of the week or a fixed set of configuration values. Arrays are allocated on the stack, which is generally faster than heap allocation (used by vectors). The memory footprint is predictable and efficient, as no dynamic resizing is required. An example would be storing a list of
-months in a year. These values never change.</p>
-</li>
-<li>
-<p><code>Vectors</code> are better suited for scenarios where the size of the data can change at runtime. If you need to add, remove, or modify the number of elements dynamically, vectors are the go-to choice. Vectors are heap-allocated and can grow or shrink in size as needed. They offer more flexibility compared to arrays and are essential when working with collections where the size is not known upfront. An example would be storing a list of users in a chat application. These values can change at runtime.</p>
-</li>
+<li><strong><code>bfs</code></strong>: Uses a queue to explore nodes level by level, marking nodes as visited.</li>
 </ul>
-<h2 id="why-arrays-and-vectors-are-important"><a class="header" href="#why-arrays-and-vectors-are-important">Why Arrays and Vectors are important?</a></h2>
-<h3 id="foundational-data-structures"><a class="header" href="#foundational-data-structures">Foundational Data Structures</a></h3>
-<p>Arrays and vectors are some of the most fundamental data structures in computer science. They provide a way to store and manage collections of data, which is essential in virtually all programs. More complex data structures like matrices, heaps, and even databases often rely on arrays or vectors as their underlying storage mechanism.</p>
-<h3 id="memory-management-and-performance"><a class="header" href="#memory-management-and-performance">Memory Management and Performance</a></h3>
-<p>Both arrays and vectors allow for constant-time (O(1)) access to elements via indexing. This makes them highly efficient for tasks where you need to frequently access or modify individual elements.</p>
+<h2 id="real-world-examples"><a class="header" href="#real-world-examples">Real World Examples</a></h2>
+<h3 id="graphs-1"><a class="header" href="#graphs-1">Graphs</a></h3>
+<p>Graphs are used in various applications such as:</p>
+<ul>
+<li><strong>Social Networks</strong>: Representing connections between users.</li>
+<li><strong>Routing Algorithms</strong>: Finding the shortest path in network routing and GPS navigation.</li>
+<li><strong>Recommendation Systems</strong>: Based on user preferences and item relationships.</li>
+</ul>
+<h3 id="depth-first-search-dfs-1"><a class="header" href="#depth-first-search-dfs-1">Depth-First Search (DFS)</a></h3>
+<p>DFS is used in:</p>
+<ul>
+<li><strong>Pathfinding Algorithms</strong>: For maze-solving or puzzle-solving.</li>
+<li><strong>Topological Sorting</strong>: In directed acyclic graphs (DAGs) for scheduling tasks.</li>
+</ul>
+<h3 id="breadth-first-search-bfs-1"><a class="header" href="#breadth-first-search-bfs-1">Breadth-First Search (BFS)</a></h3>
+<p>BFS is used in:</p>
+<ul>
+<li><strong>Shortest Path Algorithms</strong>: For finding the shortest path in unweighted graphs.</li>
+<li><strong>Level Order Traversal</strong>: In trees and graphs, such as hierarchical data processing.</li>
+</ul>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>Arrays and vectors are indispensable in computer science due to their efficiency, simplicity, and versatility. Arrays offer speed and predictability for fixed-size data, while vectors provide the flexibility needed to handle dynamic data sets. Mastery of these structures lays the groundwork for understanding more complex data structures and algorithms, making them a key part of any programmer's toolkit.</p>
+<p>Graphs and their associated algorithms are crucial for solving complex problems in various domains. Understanding and implementing graph algorithms like DFS and BFS in Rust can help you tackle a wide range of real-world problems more effectively.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../lessons/2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lessons/8.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../lessons/4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../lessons/10.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -300,11 +350,11 @@ months in a year. These values never change.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../lessons/2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lessons/8.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../lessons/4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../lessons/10.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

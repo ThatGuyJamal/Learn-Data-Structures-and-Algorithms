@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Arrays and Vectors - Learning Data Structures and Algorithms</title>
+        <title>Dynamic Programming - Learning Data Structures and Algorithms</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html" class="active"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html" class="active"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -150,7 +150,7 @@
                         <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/3.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/12.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -179,118 +179,122 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="arrays-and-vectors"><a class="header" href="#arrays-and-vectors">Arrays and Vectors</a></h1>
+                        <h1 id="dynamic-programming"><a class="header" href="#dynamic-programming">Dynamic Programming</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>In this lesson, we'll explore arrays and vectors, their properties and usage in Rust.</p>
-<h2 id="key-points"><a class="header" href="#key-points">Key Points</a></h2>
+<p>Dynamic Programming (DP) is a powerful technique for solving complex problems by breaking them down into simpler subproblem's. It is particularly useful for optimization problems where overlapping subproblem's and optimal substructure are present. In this lesson, we will explore the concepts of Dynamic Programming, its key principles, and how to implement it in Rust.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
 <ul>
-<li>Arrays: A collection of elements of the same type.</li>
-<li>Vectors: A resizable array that stores elements of the same type.</li>
+<li><strong>Dynamic Programming</strong>: A method for solving problems by breaking them into simpler overlapping subproblem's and storing their solutions.</li>
+<li><strong>Optimal Substructure</strong>: A property that an optimal solution to a problem contains optimal solutions to its subproblem's.</li>
+<li><strong>Overlapping Subproblem</strong>: When the same subproblem's are solved multiple times in the process of solving a larger problem.</li>
 </ul>
-<h3 id="arrays"><a class="header" href="#arrays">Arrays</a></h3>
-<p>An array is a data structure that stores elements of the same type in contiguous memory locations.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-println!("Array: {:?}", arr);
-<span class="boring">}</span></code></pre></pre>
-<p>Accessing Elements of an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-let first = arr[0];
-let last = arr[arr.len() - 1];
-
-println!("First element: {}", first);
-println!("Last element: {}", last);
-<span class="boring">}</span></code></pre></pre>
-<p>Iterating Over an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-for i in arr.iter() {
-    println!("{}", i);
+<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
+<h3 id="memoization"><a class="header" href="#memoization">Memoization</a></h3>
+<p>Memoization is a top-down approach where you solve the problem by recursion and store the results of subproblem's to avoid redundant calculations.</p>
+<h3 id="tabulation"><a class="header" href="#tabulation">Tabulation</a></h3>
+<p>Tabulation is a bottom-up approach where you solve all possible subproblem's iteratively and store their results in a table, building up the solution to the problem step by step.</p>
+<h2 id="example-problems"><a class="header" href="#example-problems">Example Problems</a></h2>
+<h3 id="fibonacci-sequence"><a class="header" href="#fibonacci-sequence">Fibonacci Sequence</a></h3>
+<p>The Fibonacci sequence is a classic example to illustrate Dynamic Programming. Each number in the sequence is the sum of the two preceding ones. The problem can be solved using both memoization and tabulation.</p>
+<h4 id="recursive-solution-naive-approach"><a class="header" href="#recursive-solution-naive-approach">Recursive Solution (Naive Approach)</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn fibonacci(n: u32) -&gt; u32 {
+    match n {
+        0 =&gt; 0,
+        1 =&gt; 1,
+        _ =&gt; fibonacci(n - 1) + fibonacci(n - 2),
+    }
 }
-<span class="boring">}</span></code></pre></pre>
-<p>Common Operations on Arrays</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
 
-let slice = &amp;arr[1..4];
+fn main() {
+    let n = 10;
+    println!("Fibonacci of {} is {}", n, fibonacci(n));
+}</code></pre></pre>
+<h4 id="memoization-approach"><a class="header" href="#memoization-approach">Memoization Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
 
-println!("Slice: {:?}", slice);
+fn fibonacci_memo(n: u32, memo: &amp;mut HashMap&lt;u32, u32&gt;) -&gt; u32 {
+    if let Some(&amp;result) = memo.get(&amp;n) {
+        return result;
+    }
 
-let reversed = arr.iter().rev().collect::&lt;Vec&lt;_&gt;&gt;();
+    let result = match n {
+        0 =&gt; 0,
+        1 =&gt; 1,
+        _ =&gt; fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo),
+    };
 
-println!("Reversed: {:?}", reversed);
+    memo.insert(n, result);
+    result
+}
 
-let mut doubled = arr.iter().map(|x| x * 2).collect::&lt;Vec&lt;_&gt;&gt;();
+fn main() {
+    let n = 10;
+    let mut memo = HashMap::new();
+    println!("Fibonacci of {} is {}", n, fibonacci_memo(n, &amp;mut memo));
+}</code></pre></pre>
+<h4 id="tabulation-approach"><a class="header" href="#tabulation-approach">Tabulation Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn fibonacci_tab(n: u32) -&gt; u32 {
+    if n == 0 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    }
 
-println!("Doubled: {:?}", doubled);
-<span class="boring">}</span></code></pre></pre>
+    let mut table = vec![0; (n + 1) as usize];
+    table[1] = 1;
+
+    for i in 2..=n {
+        table[i as usize] = table[(i - 1) as usize] + table[(i - 2) as usize];
+    }
+
+    table[n as usize]
+}
+
+fn main() {
+    let n = 10;
+    println!("Fibonacci of {} is {}", n, fibonacci_tab(n));
+}</code></pre></pre>
+<h3 id="knapsack-problem"><a class="header" href="#knapsack-problem">Knapsack Problem</a></h3>
+<p>The Knapsack Problem is a classic optimization problem where you must determine the most valuable combination of items to include in a knapsack without exceeding its capacity.</p>
+<h4 id="problem-definition"><a class="header" href="#problem-definition">Problem Definition</a></h4>
+<p>Given weights and values of items, and a knapsack capacity, find the maximum value that can be obtained by picking items to fit into the knapsack.</p>
+<h4 id="tabulation-approach-1"><a class="header" href="#tabulation-approach-1">Tabulation Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn knapsack(weights: &amp;[usize], values: &amp;[usize], capacity: usize) -&gt; usize {
+    let n = weights.len();
+    let mut dp = vec![0; capacity + 1];
+
+    for i in 0..n {
+        for w in (weights[i]..=capacity).rev() {
+            dp[w] = dp[w].max(dp[w - weights[i]] + values[i]);
+        }
+    }
+
+    dp[capacity]
+}
+
+fn main() {
+    let weights = vec![1, 2, 3];
+    let values = vec![10, 15, 40];
+    let capacity = 6;
+    println!("Maximum value in knapsack: {}", knapsack(&amp;weights, &amp;values, capacity));
+}</code></pre></pre>
+<h3 id="real-world-examples"><a class="header" href="#real-world-examples">Real World Examples</a></h3>
 <ul>
-<li>Slicing: Get a pointer to a range of elements in an array.</li>
-<li>Reverse: Reverse the order of elements in an array.</li>
-<li>Doubled: Double each element in an array. The <code>map</code> method applies a function to each element in an array and returns a new array with the results. The <code>collect</code> method collects the results into a vector.</li>
+<li><strong>Fibonacci Sequence</strong>: Useful in problems requiring calculation of sequence values or optimization problems involving recursive calculations.</li>
+<li><strong>Knapsack Problem</strong>: Common in resource allocation problems, such as budgeting or inventory management.</li>
 </ul>
-<h2 id="vectors"><a class="header" href="#vectors">Vectors</a></h2>
-<p>A vector is a resizable array that stores elements of the same type.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
-
-println!("Vector: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
-<p>Adding and Removing Elements from a Vector</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
-
-vec.push(6);
-vec.push(7);
-
-println!("Added: {:?}", vec);
-
-vec.pop();
-
-println!("Removed: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
-<ul>
-<li>Push: Add an element to the end of a vector.</li>
-<li>Pop: Remove the last element from a vector.</li>
-</ul>
-<p>Many other the operations on vectors are similar to those on arrays. See the <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html">Rust documentation</a> for more information.</p>
-<h2 id="when-do-we-use-arrays-vs-vectors"><a class="header" href="#when-do-we-use-arrays-vs-vectors">When do we use Arrays vs. Vectors?</a></h2>
-<ul>
-<li>
-<p><code>Arrays</code> are ideal when you know the number of elements at compile time and this number won’t change. For example, storing the days of the week or a fixed set of configuration values. Arrays are allocated on the stack, which is generally faster than heap allocation (used by vectors). The memory footprint is predictable and efficient, as no dynamic resizing is required. An example would be storing a list of
-months in a year. These values never change.</p>
-</li>
-<li>
-<p><code>Vectors</code> are better suited for scenarios where the size of the data can change at runtime. If you need to add, remove, or modify the number of elements dynamically, vectors are the go-to choice. Vectors are heap-allocated and can grow or shrink in size as needed. They offer more flexibility compared to arrays and are essential when working with collections where the size is not known upfront. An example would be storing a list of users in a chat application. These values can change at runtime.</p>
-</li>
-</ul>
-<h2 id="why-arrays-and-vectors-are-important"><a class="header" href="#why-arrays-and-vectors-are-important">Why Arrays and Vectors are important?</a></h2>
-<h3 id="foundational-data-structures"><a class="header" href="#foundational-data-structures">Foundational Data Structures</a></h3>
-<p>Arrays and vectors are some of the most fundamental data structures in computer science. They provide a way to store and manage collections of data, which is essential in virtually all programs. More complex data structures like matrices, heaps, and even databases often rely on arrays or vectors as their underlying storage mechanism.</p>
-<h3 id="memory-management-and-performance"><a class="header" href="#memory-management-and-performance">Memory Management and Performance</a></h3>
-<p>Both arrays and vectors allow for constant-time (O(1)) access to elements via indexing. This makes them highly efficient for tasks where you need to frequently access or modify individual elements.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>Arrays and vectors are indispensable in computer science due to their efficiency, simplicity, and versatility. Arrays offer speed and predictability for fixed-size data, while vectors provide the flexibility needed to handle dynamic data sets. Mastery of these structures lays the groundwork for understanding more complex data structures and algorithms, making them a key part of any programmer's toolkit.</p>
+<p>Dynamic Programming is a versatile technique for solving optimization problems by breaking them down into simpler subproblems and storing their solutions. Understanding memoization and tabulation helps you tackle complex problems more efficiently and gain deeper insights into algorithmic problem-solving.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../lessons/2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lessons/11.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../lessons/4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../lessons/13.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -300,11 +304,11 @@ months in a year. These values never change.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../lessons/2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lessons/11.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../lessons/4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../lessons/13.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

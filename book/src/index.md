@@ -45,14 +45,13 @@ Here is a brief overview of what we will cover in this series:
 5. **Stacks and Queues**: Understanding these fundamental structures.
 6. **Hash Maps and Hash Sets**: Diving into hashing and its applications.
 7. **Binary Trees**: Learning about tree structures and their properties.
-8. **Binary Search Trees**: Understanding and implementing BSTs.
-9. **Heaps and Priority Queues**: Working with heaps and priority queues.
-10. **Graphs and Graph Algorithms**: Exploring graph structures and basic algorithms.
-11. **Sorting Algorithms**: Understanding and implementing common sorting techniques.
-12. **Searching Algorithms**: Exploring linear and binary search methods.
-13. **Dynamic Programming**: Learning about memoization and tabulation.
-14. **Recursion and Backtracking**: Understanding these powerful techniques.
-15. **Final Project**: Building a comprehensive project that integrates multiple concepts.
+8. **Heaps and Priority Queues**: Working with heaps and priority queues.
+9. **Graphs and Graph Algorithms**: Exploring graph structures and basic algorithms.
+10. **Sorting Algorithms**: Understanding and implementing common sorting techniques.
+11. **Searching Algorithms**: Exploring linear and binary search methods.
+12. **Dynamic Programming**: Learning about memoization and tabulation.
+13. **Recursion and Backtracking**: Understanding these powerful techniques.
+14. **Recommended Projects**: Future your learning journey.
 
 ## Getting Ready
 

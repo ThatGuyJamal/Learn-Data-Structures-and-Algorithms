@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "Deque",
+        "heapify",
         "isize",
         "Linearithmic",
         "println",

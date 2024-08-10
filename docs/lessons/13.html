@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Arrays and Vectors - Learning Data Structures and Algorithms</title>
+        <title>Recursion and Backtracking - Learning Data Structures and Algorithms</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html" class="active"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html" class="active"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -150,7 +150,7 @@
                         <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/3.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/13.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -179,118 +179,163 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="arrays-and-vectors"><a class="header" href="#arrays-and-vectors">Arrays and Vectors</a></h1>
+                        <h1 id="recursion-and-backtracking"><a class="header" href="#recursion-and-backtracking">Recursion and Backtracking</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>In this lesson, we'll explore arrays and vectors, their properties and usage in Rust.</p>
-<h2 id="key-points"><a class="header" href="#key-points">Key Points</a></h2>
+<p>Recursion and backtracking are fundamental techniques in computer science for solving complex problems by breaking them down into simpler subproblem's. They are especially useful for problems involving combinatorial search, optimization, and constraint satisfaction. In this lesson, we'll explore these concepts, their principles, and how to implement them in Rust.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
 <ul>
-<li>Arrays: A collection of elements of the same type.</li>
-<li>Vectors: A resizable array that stores elements of the same type.</li>
+<li><strong>Recursion</strong>: A technique where a function calls itself to solve smaller instances of the same problem.</li>
+<li><strong>Backtracking</strong>: A method for solving problems by trying out possible solutions and reverting to previous steps if a solution doesn't work out.</li>
 </ul>
-<h3 id="arrays"><a class="header" href="#arrays">Arrays</a></h3>
-<p>An array is a data structure that stores elements of the same type in contiguous memory locations.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-println!("Array: {:?}", arr);
-<span class="boring">}</span></code></pre></pre>
-<p>Accessing Elements of an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-let first = arr[0];
-let last = arr[arr.len() - 1];
-
-println!("First element: {}", first);
-println!("Last element: {}", last);
-<span class="boring">}</span></code></pre></pre>
-<p>Iterating Over an Array</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
-for i in arr.iter() {
-    println!("{}", i);
+<h2 id="recursion"><a class="header" href="#recursion">Recursion</a></h2>
+<h3 id="definition"><a class="header" href="#definition">Definition</a></h3>
+<p>Recursion is a method of solving problems where the solution depends on solutions to smaller instances of the same problem. A recursive function is one that calls itself directly or indirectly.</p>
+<h3 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h3>
+<ol>
+<li><strong>Base Case</strong>: The condition under which the recursion stops. It's crucial for preventing infinite recursion.</li>
+<li><strong>Recursive Case</strong>: The part of the function where it calls itself with modified arguments.</li>
+</ol>
+<h3 id="example-factorial"><a class="header" href="#example-factorial">Example: Factorial</a></h3>
+<p>The factorial of a non-negative integer <code>n</code> is the product of all positive integers less than or equal to <code>n</code>. It can be defined recursively as:</p>
+<ul>
+<li><code>factorial(n) = n * factorial(n - 1)</code></li>
+<li><code>factorial(0) = 1</code> (base case)</li>
+</ul>
+<h4 id="rust-implementation"><a class="header" href="#rust-implementation">Rust Implementation</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn factorial(n: u32) -&gt; u32 {
+    if n == 0 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
 }
-<span class="boring">}</span></code></pre></pre>
-<p>Common Operations on Arrays</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let arr: [i32; 5] = [1, 2, 3, 4, 5];
 
-let slice = &amp;arr[1..4];
-
-println!("Slice: {:?}", slice);
-
-let reversed = arr.iter().rev().collect::&lt;Vec&lt;_&gt;&gt;();
-
-println!("Reversed: {:?}", reversed);
-
-let mut doubled = arr.iter().map(|x| x * 2).collect::&lt;Vec&lt;_&gt;&gt;();
-
-println!("Doubled: {:?}", doubled);
-<span class="boring">}</span></code></pre></pre>
+fn main() {
+    let n = 5;
+    println!("Factorial of {} is {}", n, factorial(n));
+}</code></pre></pre>
+<h3 id="explanation"><a class="header" href="#explanation">Explanation</a></h3>
 <ul>
-<li>Slicing: Get a pointer to a range of elements in an array.</li>
-<li>Reverse: Reverse the order of elements in an array.</li>
-<li>Doubled: Double each element in an array. The <code>map</code> method applies a function to each element in an array and returns a new array with the results. The <code>collect</code> method collects the results into a vector.</li>
+<li><strong>Base Case</strong>: If <code>n</code> is 0, return 1.</li>
+<li><strong>Recursive Case</strong>: For any other <code>n</code>, return <code>n * factorial(n - 1)</code>.</li>
 </ul>
-<h2 id="vectors"><a class="header" href="#vectors">Vectors</a></h2>
-<p>A vector is a resizable array that stores elements of the same type.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
+<h2 id="backtracking"><a class="header" href="#backtracking">Backtracking</a></h2>
+<h3 id="definition-1"><a class="header" href="#definition-1">Definition</a></h3>
+<p>Backtracking is an algorithmic technique for solving problems by exploring all potential solutions and discarding those that do not meet the constraints. It involves trying out possible solutions, and if a solution is not feasible, it reverts to a previous step and tries another path.</p>
+<h3 id="key-concepts-1"><a class="header" href="#key-concepts-1">Key Concepts</a></h3>
+<ol>
+<li><strong>Solution Space</strong>: The set of all possible solutions.</li>
+<li><strong>Feasible Solution</strong>: A solution that satisfies the problem constraints.</li>
+<li><strong>Backtrack</strong>: When a solution path is found to be invalid, revert to a previous step and try a different path.</li>
+</ol>
+<h3 id="example-n-queens-problem"><a class="header" href="#example-n-queens-problem">Example: N-Queens Problem</a></h3>
+<p>The N-Queens problem involves placing <code>N</code> queens on an <code>N x N</code> chessboard so that no two queens threaten each other. The challenge is to find all possible arrangements.</p>
+<h4 id="rust-implementation-1"><a class="header" href="#rust-implementation-1">Rust Implementation</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn is_safe(board: &amp;Vec&lt;Vec&lt;bool&gt;&gt;, row: usize, col: usize) -&gt; bool {
+    // Check this column on previous rows
+    for i in 0..row {
+        if board[i][col] {
+            return false;
+        }
+    }
 
-println!("Vector: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
-<p>Adding and Removing Elements from a Vector</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut vec: Vec&lt;i32&gt; = vec![1, 2, 3, 4, 5];
+    // Check upper-left diagonal
+    let mut i = row;
+    let mut j = col;
+    while i &gt;= 0 &amp;&amp; j &gt;= 0 {
+        if board[i][j] {
+            return false;
+        }
+        if i == 0 || j == 0 {
+            break;
+        }
+        i -= 1;
+        j -= 1;
+    }
 
-vec.push(6);
-vec.push(7);
+    // Check upper-right diagonal
+    i = row;
+    j = col;
+    while i &gt;= 0 &amp;&amp; j &lt; board.len() {
+        if board[i][j] {
+            return false;
+        }
+        if i == 0 || j == board.len() - 1 {
+            break;
+        }
+        i -= 1;
+        j += 1;
+    }
 
-println!("Added: {:?}", vec);
+    true
+}
 
-vec.pop();
+fn solve_n_queens(board: &amp;mut Vec&lt;Vec&lt;bool&gt;&gt;, row: usize) -&gt; bool {
+    if row &gt;= board.len() {
+        return true;
+    }
 
-println!("Removed: {:?}", vec);
-<span class="boring">}</span></code></pre></pre>
+    for col in 0..board.len() {
+        if is_safe(board, row, col) {
+            board[row][col] = true;
+            if solve_n_queens(board, row + 1) {
+                return true;
+            }
+            board[row][col] = false;
+        }
+    }
+
+    false
+}
+
+fn main() {
+    let n = 4;
+    let mut board = vec![vec![false; n]; n];
+    if solve_n_queens(&amp;mut board, 0) {
+        println!("Solution found:");
+        for row in board {
+            for cell in row {
+                if cell {
+                    print!("Q ");
+                } else {
+                    print!(". ");
+                }
+            }
+            println!();
+        }
+    } else {
+        println!("No solution found.");
+    }
+}</code></pre></pre>
+<h3 id="explanation-1"><a class="header" href="#explanation-1">Explanation</a></h3>
+<ol>
+<li><strong><code>is_safe</code> Function</strong>: Checks if it's safe to place a queen at a given position by verifying column and diagonal constraints.</li>
+<li><strong><code>solve_n_queens</code> Function</strong>: Tries placing queens in all columns of the current row and recurses to solve for the next row. If placing a queen leads to a solution, it returns <code>true</code>; otherwise, it backtracks by removing the queen and trying the next column.</li>
+<li><strong><code>main</code> Function</strong>: Initializes the board and starts the solving process.</li>
+</ol>
+<h2 id="real-world-examples"><a class="header" href="#real-world-examples">Real World Examples</a></h2>
+<h3 id="recursion-1"><a class="header" href="#recursion-1">Recursion</a></h3>
 <ul>
-<li>Push: Add an element to the end of a vector.</li>
-<li>Pop: Remove the last element from a vector.</li>
+<li><strong>File System Traversal</strong>: Navigating directories and files using recursion.</li>
+<li><strong>Tree Traversal</strong>: Traversing nodes in a hierarchical tree structure.</li>
 </ul>
-<p>Many other the operations on vectors are similar to those on arrays. See the <a href="https://doc.rust-lang.org/std/vec/struct.Vec.html">Rust documentation</a> for more information.</p>
-<h2 id="when-do-we-use-arrays-vs-vectors"><a class="header" href="#when-do-we-use-arrays-vs-vectors">When do we use Arrays vs. Vectors?</a></h2>
+<h3 id="backtracking-1"><a class="header" href="#backtracking-1">Backtracking</a></h3>
 <ul>
-<li>
-<p><code>Arrays</code> are ideal when you know the number of elements at compile time and this number won’t change. For example, storing the days of the week or a fixed set of configuration values. Arrays are allocated on the stack, which is generally faster than heap allocation (used by vectors). The memory footprint is predictable and efficient, as no dynamic resizing is required. An example would be storing a list of
-months in a year. These values never change.</p>
-</li>
-<li>
-<p><code>Vectors</code> are better suited for scenarios where the size of the data can change at runtime. If you need to add, remove, or modify the number of elements dynamically, vectors are the go-to choice. Vectors are heap-allocated and can grow or shrink in size as needed. They offer more flexibility compared to arrays and are essential when working with collections where the size is not known upfront. An example would be storing a list of users in a chat application. These values can change at runtime.</p>
-</li>
+<li><strong>Sudoku Solver</strong>: Finding a solution to Sudoku puzzles by trying possible values and backtracking if needed.</li>
+<li><strong>Path-finding Problems</strong>: Finding a path through a maze or grid by exploring possible paths and retracting when encountering obstacles.</li>
 </ul>
-<h2 id="why-arrays-and-vectors-are-important"><a class="header" href="#why-arrays-and-vectors-are-important">Why Arrays and Vectors are important?</a></h2>
-<h3 id="foundational-data-structures"><a class="header" href="#foundational-data-structures">Foundational Data Structures</a></h3>
-<p>Arrays and vectors are some of the most fundamental data structures in computer science. They provide a way to store and manage collections of data, which is essential in virtually all programs. More complex data structures like matrices, heaps, and even databases often rely on arrays or vectors as their underlying storage mechanism.</p>
-<h3 id="memory-management-and-performance"><a class="header" href="#memory-management-and-performance">Memory Management and Performance</a></h3>
-<p>Both arrays and vectors allow for constant-time (O(1)) access to elements via indexing. This makes them highly efficient for tasks where you need to frequently access or modify individual elements.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>Arrays and vectors are indispensable in computer science due to their efficiency, simplicity, and versatility. Arrays offer speed and predictability for fixed-size data, while vectors provide the flexibility needed to handle dynamic data sets. Mastery of these structures lays the groundwork for understanding more complex data structures and algorithms, making them a key part of any programmer's toolkit.</p>
+<p>Recursion and backtracking are essential techniques for solving complex problems by breaking them down into simpler subproblems and exploring all possible solutions. Mastering these techniques can enhance your problem-solving skills and help you tackle a wide range of algorithmic challenges.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../lessons/2.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lessons/12.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../lessons/4.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../lessons/14.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -300,11 +345,11 @@ months in a year. These values never change.</p>
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../lessons/2.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lessons/12.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../lessons/4.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../lessons/14.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

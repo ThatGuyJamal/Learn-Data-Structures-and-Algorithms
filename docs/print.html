@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -215,14 +215,13 @@ ideal for learning data structures and algorithms.</p>
 <li><strong>Stacks and Queues</strong>: Understanding these fundamental structures.</li>
 <li><strong>Hash Maps and Hash Sets</strong>: Diving into hashing and its applications.</li>
 <li><strong>Binary Trees</strong>: Learning about tree structures and their properties.</li>
-<li><strong>Binary Search Trees</strong>: Understanding and implementing BSTs.</li>
 <li><strong>Heaps and Priority Queues</strong>: Working with heaps and priority queues.</li>
 <li><strong>Graphs and Graph Algorithms</strong>: Exploring graph structures and basic algorithms.</li>
 <li><strong>Sorting Algorithms</strong>: Understanding and implementing common sorting techniques.</li>
 <li><strong>Searching Algorithms</strong>: Exploring linear and binary search methods.</li>
 <li><strong>Dynamic Programming</strong>: Learning about memoization and tabulation.</li>
 <li><strong>Recursion and Backtracking</strong>: Understanding these powerful techniques.</li>
-<li><strong>Final Project</strong>: Building a comprehensive project that integrates multiple concepts.</li>
+<li><strong>Recommended Projects</strong>: Future your learning journey.</li>
 </ol>
 <h2 id="getting-ready"><a class="header" href="#getting-ready">Getting Ready</a></h2>
 <p>Before we dive into the technical content, make sure you have the following:</p>
@@ -385,6 +384,22 @@ let c: (i32, &amp;str) = (1, "hello");
 // bool is a boolean type
 let d: bool = true;
 <span class="boring">}</span></code></pre></pre>
+<h3 id="generics"><a class="header" href="#generics">Generics</a></h3>
+<p>Rust supports generic programming with generics. Generics are used to write reusable code with different types.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add&lt;T: std::ops::Add&lt;Output = T&gt;&gt;(a: T, b: T) -&gt; T {
+    a + b
+}
+
+let result = add(1, 2);
+println!("Result: {:?}", result);
+
+let result = add(1.3, 2.3);
+println!("Result: {:?}", result);
+<span class="boring">}</span></code></pre></pre>
+<p>This code will work with any type that implements the <code>std::ops::Add</code> trait. For example, <code>i32</code> and <code>f32</code> can both be passed
+as arguments to the <code>add</code> function and their sum will be returned.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In this episode, we've set up the Rust development environment, explored some basic syntax and features of Rust, and wrote our first Rust program. In the next episode, we will dive into understanding Big O Notation and analyzing time complexity.</p>
 <p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next episode!</p>
@@ -981,6 +996,1211 @@ fn main() {
 </ul>
 <h2 id="conclusion-4"><a class="header" href="#conclusion-4">Conclusion</a></h2>
 <p>Stacks and queues are essential for managing data in various applications. By implementing these structures in Rust, you can handle data efficiently and understand fundamental programming concepts better.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hash-maps-and-hash-sets"><a class="header" href="#hash-maps-and-hash-sets">Hash Maps and Hash Sets</a></h1>
+<h2 id="introduction-5"><a class="header" href="#introduction-5">Introduction</a></h2>
+<p>In this lesson, we'll explore hash maps and hash sets, their properties, and their usage in Rust.</p>
+<h3 id="key-points-4"><a class="header" href="#key-points-4">Key Points</a></h3>
+<ul>
+<li><strong>Hash Maps</strong>: A data structure that stores key-value pairs with efficient lookups, insertions, and deletions.</li>
+<li><strong>Hash Sets</strong>: A data structure that stores unique elements with efficient membership checking.</li>
+</ul>
+<h2 id="hash-maps"><a class="header" href="#hash-maps">Hash Maps</a></h2>
+<p>A hash map is a collection of key-value pairs where each key is unique. It allows for efficient data retrieval based on keys.</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut map = HashMap::new();
+
+    // Inserting key-value pairs
+    map.insert("name", "Alice");
+    map.insert("age", "30");
+    map.insert("city", "New York");
+
+    // Accessing values
+    if let Some(name) = map.get("name") {
+        println!("Name: {}", name);
+    }
+
+    // Iterating over key-value pairs
+    for (key, value) in &amp;map {
+        println!("{}: {}", key, value);
+    }
+
+    // Removing a key-value pair
+    map.remove("age");
+
+    // Checking if a key exists
+    if map.contains_key("city") {
+        println!("City key exists");
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-2"><a class="header" href="#code-explanation-2">Code Explanation</a></h3>
+<ul>
+<li><code>insert</code> adds a key-value pair to the map.</li>
+<li><code>get</code> retrieves a value associated with a key.</li>
+<li><code>remove</code> deletes a key-value pair from the map.</li>
+<li><code>contains_key</code> checks if a key exists in the map.</li>
+</ul>
+<h2 id="hash-sets"><a class="header" href="#hash-sets">Hash Sets</a></h2>
+<p>A hash set is a collection of unique elements with no duplicates. It allows for efficient membership testing and insertion.</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashSet;
+
+fn main() {
+    let mut set = HashSet::new();
+
+    // Inserting elements
+    set.insert("apple");
+    set.insert("banana");
+    set.insert("cherry");
+
+    // Checking if an element exists
+    if set.contains("banana") {
+        println!("Banana is in the set");
+    }
+
+    // Removing an element
+    set.remove("apple");
+
+    // Iterating over elements
+    for item in &amp;set {
+        println!("{}", item);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-3"><a class="header" href="#code-explanation-3">Code Explanation</a></h3>
+<ul>
+<li><code>insert</code> adds an element to the set.</li>
+<li><code>contains</code> checks if an element is in the set.</li>
+<li><code>remove</code> deletes an element from the set.</li>
+</ul>
+<h2 id="real-world-examples-1"><a class="header" href="#real-world-examples-1">Real World Examples</a></h2>
+<h3 id="hash-maps-1"><a class="header" href="#hash-maps-1">Hash Maps</a></h3>
+<p>Hash maps are widely used in situations where you need to quickly look up values based on a unique key. For instance, in a contact management system, you can use a hash map to store and retrieve contact information using phone numbers as keys.</p>
+<p>How It Works:</p>
+<ul>
+<li><strong>Insert</strong>: Add a contact with a unique phone number.</li>
+<li><strong>Get</strong>: Retrieve a contact's information using their phone number.</li>
+<li><strong>Remove</strong>: Delete a contact when it's no longer needed.</li>
+</ul>
+<h3 id="hash-sets-1"><a class="header" href="#hash-sets-1">Hash Sets</a></h3>
+<p>Hash sets are useful for managing collections of unique items. For example, in a voting system, you can use a hash set to keep track of users who have already voted, ensuring that each user only votes once.</p>
+<p>How It Works:</p>
+<ul>
+<li><strong>Insert</strong>: Add a user ID to the set when they vote.</li>
+<li><strong>Contains</strong>: Check if a user ID is already in the set to prevent duplicate votes.</li>
+<li><strong>Remove</strong>: If needed, remove a user ID from the set (e.g., if a vote is retracted).</li>
+</ul>
+<h2 id="conclusion-5"><a class="header" href="#conclusion-5">Conclusion</a></h2>
+<p>Hash maps and hash sets are powerful data structures for efficient data management and retrieval. By implementing these structures in Rust, you can handle a wide range of applications and improve the performance of your programs.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary-trees"><a class="header" href="#binary-trees">Binary Trees</a></h1>
+<h2 id="introduction-6"><a class="header" href="#introduction-6">Introduction</a></h2>
+<p>In this lesson, we'll explore binary trees, their properties, and their usage in Rust. Binary trees are a fundamental data structure used in various applications, from databases to AI algorithms.</p>
+<h3 id="key-points-5"><a class="header" href="#key-points-5">Key Points</a></h3>
+<ul>
+<li><strong>Binary Trees</strong>: A tree data structure where each node has at most two children, referred to as the left child and the right child.</li>
+<li><strong>Types of Binary Trees</strong>: Full, Complete, and Binary Search Trees (BSTs).</li>
+</ul>
+<h2 id="binary-trees-1"><a class="header" href="#binary-trees-1">Binary Trees</a></h2>
+<p>A binary tree is a hierarchical structure where each node has at most two children. It starts with a root node and each node can have a left and/or right child.</p>
+<h3 id="basic-binary-tree-node"><a class="header" href="#basic-binary-tree-node">Basic Binary Tree Node</a></h3>
+<p>Here’s a basic implementation of a binary tree node in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct TreeNode&lt;T&gt; {
+    value: T,
+    left: Option&lt;Box&lt;TreeNode&lt;T&gt;&gt;&gt;,
+    right: Option&lt;Box&lt;TreeNode&lt;T&gt;&gt;&gt;,
+}
+
+impl&lt;T&gt; TreeNode&lt;T&gt; {
+    fn new(value: T) -&gt; Self {
+        TreeNode {
+            value,
+            left: None,
+            right: None,
+        }
+    }
+
+    fn insert_left(&amp;mut self, value: T) {
+        self.left = Some(Box::new(TreeNode::new(value)));
+    }
+
+    fn insert_right(&amp;mut self, value: T) {
+        self.right = Some(Box::new(TreeNode::new(value)));
+    }
+}
+
+fn main() {
+    let mut root = TreeNode::new(1);
+    root.insert_left(2);
+    root.insert_right(3);
+
+    if let Some(left) = &amp;root.left {
+        println!("Left child: {:?}", left);
+    }
+    if let Some(right) = &amp;root.right {
+        println!("Right child: {:?}", right);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-4"><a class="header" href="#code-explanation-4">Code Explanation</a></h3>
+<ul>
+<li><strong><code>new</code></strong>: Creates a new node with a given value.</li>
+<li><strong><code>insert_left</code></strong>: Adds a left child to the current node.</li>
+<li><strong><code>insert_right</code></strong>: Adds a right child to the current node.</li>
+</ul>
+<h2 id="binary-search-trees-bsts"><a class="header" href="#binary-search-trees-bsts">Binary Search Trees (BSTs)</a></h2>
+<p>A Binary Search Tree (BST) is a binary tree where each node follows the property: all nodes in the left subtree are less than the node’s value, and all nodes in the right subtree are greater than the node’s value.</p>
+<h3 id="bst-implementation"><a class="header" href="#bst-implementation">BST Implementation</a></h3>
+<p>Here’s how you can implement a basic BST in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct BSTNode&lt;T&gt; {
+    value: T,
+    left: Option&lt;Box&lt;BSTNode&lt;T&gt;&gt;&gt;,
+    right: Option&lt;Box&lt;BSTNode&lt;T&gt;&gt;&gt;,
+}
+
+impl&lt;T: Ord&gt; BSTNode&lt;T&gt; {
+    fn new(value: T) -&gt; Self {
+        BSTNode {
+            value,
+            left: None,
+            right: None,
+        }
+    }
+
+    fn insert(&amp;mut self, value: T) {
+        if value &lt; self.value {
+            if let Some(left) = &amp;mut self.left {
+                left.insert(value);
+            } else {
+                self.left = Some(Box::new(BSTNode::new(value)));
+            }
+        } else {
+            if let Some(right) = &amp;mut self.right {
+                right.insert(value);
+            } else {
+                self.right = Some(Box::new(BSTNode::new(value)));
+            }
+        }
+    }
+
+    fn search(&amp;self, value: T) -&gt; bool {
+        if value == self.value {
+            true
+        } else if value &lt; self.value {
+            self.left.as_ref().map_or(false, |node| node.search(value))
+        } else {
+            self.right.as_ref().map_or(false, |node| node.search(value))
+        }
+    }
+}
+
+fn main() {
+    let mut bst = BSTNode::new(10);
+    bst.insert(5);
+    bst.insert(15);
+    bst.insert(7);
+
+    println!("BST Search 7: {}", bst.search(7));
+    println!("BST Search 20: {}", bst.search(20));
+}</code></pre></pre>
+<h3 id="code-explanation-5"><a class="header" href="#code-explanation-5">Code Explanation</a></h3>
+<ul>
+<li><strong><code>insert</code></strong>: Adds a value to the BST while maintaining the BST property.</li>
+<li><strong><code>search</code></strong>: Checks if a value exists in the BST.</li>
+</ul>
+<h2 id="real-world-examples-2"><a class="header" href="#real-world-examples-2">Real World Examples</a></h2>
+<h3 id="binary-trees-2"><a class="header" href="#binary-trees-2">Binary Trees</a></h3>
+<p>Binary trees are used in various applications such as:</p>
+<ul>
+<li><strong>Expression Trees</strong>: Used in compilers to represent expressions.</li>
+<li><strong>Decision Trees</strong>: Used in machine learning for classification and regression tasks.</li>
+<li><strong>File Systems</strong>: Some file systems use binary trees to manage directories and files efficiently.</li>
+</ul>
+<h3 id="binary-search-trees-bsts-1"><a class="header" href="#binary-search-trees-bsts-1">Binary Search Trees (BSTs)</a></h3>
+<p>BSTs are commonly used in scenarios where you need to maintain a dynamic dataset with efficient searching, inserting, and deleting operations. For example:</p>
+<ul>
+<li><strong>Database Indexes</strong>: Used to speed up data retrieval operations.</li>
+<li><strong>Autocomplete Systems</strong>: BSTs can be used to quickly find possible completions for a prefix in a search query.</li>
+</ul>
+<h2 id="conclusion-6"><a class="header" href="#conclusion-6">Conclusion</a></h2>
+<p>Binary trees and binary search trees are powerful data structures that offer efficient data management and retrieval. By implementing these structures in Rust, you can handle a wide range of applications and improve your understanding of data structures.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="heaps-and-priority-queues"><a class="header" href="#heaps-and-priority-queues">Heaps and Priority Queues</a></h1>
+<h2 id="introduction-7"><a class="header" href="#introduction-7">Introduction</a></h2>
+<p>In this lesson, we'll explore heaps and priority queues, their properties, and their usage in Rust. Heaps and priority queues are essential for managing and accessing data with priority.</p>
+<h3 id="key-points-6"><a class="header" href="#key-points-6">Key Points</a></h3>
+<ul>
+<li><strong>Heaps</strong>: A specialized tree-based data structure that satisfies the heap property, commonly used to implement priority queues.</li>
+<li><strong>Priority Queues</strong>: An abstract data type where each element has a priority, and elements are served based on their priority.</li>
+</ul>
+<h2 id="heaps"><a class="header" href="#heaps">Heaps</a></h2>
+<p>A heap is a complete binary tree that satisfies the heap property. There are two types of heaps:</p>
+<ul>
+<li><strong>Max-Heap</strong>: The value of each node is greater than or equal to the values of its children.</li>
+<li><strong>Min-Heap</strong>: The value of each node is less than or equal to the values of its children.</li>
+</ul>
+<h3 id="max-heap-implementation"><a class="header" href="#max-heap-implementation">Max-Heap Implementation</a></h3>
+<p>Here’s a basic implementation of a max-heap in Rust using a vector:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct MaxHeap&lt;T&gt; {
+    heap: Vec&lt;T&gt;,
+}
+
+impl&lt;T: Ord&gt; MaxHeap&lt;T&gt; {
+    fn new() -&gt; Self {
+        MaxHeap { heap: Vec::new() }
+    }
+
+    fn insert(&amp;mut self, value: T) {
+        self.heap.push(value);
+        self.heapify_up(self.heap.len() - 1);
+    }
+
+    fn extract_max(&amp;mut self) -&gt; Option&lt;T&gt; {
+        if self.heap.is_empty() {
+            return None;
+        }
+        let max = self.heap.swap_remove(0);
+        self.heapify_down(0);
+        Some(max)
+    }
+
+    fn heapify_up(&amp;mut self, index: usize) {
+        let mut child = index;
+        while child &gt; 0 {
+            let parent = (child - 1) / 2;
+            if self.heap[child] &lt;= self.heap[parent] {
+                break;
+            }
+            self.heap.swap(child, parent);
+            child = parent;
+        }
+    }
+
+    fn heapify_down(&amp;mut self, index: usize) {
+        let mut parent = index;
+        let len = self.heap.len();
+        loop {
+            let mut max = parent;
+            let left = 2 * parent + 1;
+            let right = 2 * parent + 2;
+
+            if left &lt; len &amp;&amp; self.heap[left] &gt; self.heap[max] {
+                max = left;
+            }
+            if right &lt; len &amp;&amp; self.heap[right] &gt; self.heap[max] {
+                max = right;
+            }
+            if max == parent {
+                break;
+            }
+            self.heap.swap(parent, max);
+            parent = max;
+        }
+    }
+}
+
+fn main() {
+    let mut max_heap = MaxHeap::new();
+    max_heap.insert(10);
+    max_heap.insert(20);
+    max_heap.insert(5);
+
+    println!("Max Heap: {:?}", max_heap);
+
+    while let Some(max) = max_heap.extract_max() {
+        println!("Extracted Max: {}", max);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-6"><a class="header" href="#code-explanation-6">Code Explanation</a></h3>
+<ul>
+<li><strong><code>insert</code></strong>: Adds a value to the heap and maintains the heap property.</li>
+<li><strong><code>extract_max</code></strong>: Removes and returns the maximum value from the heap.</li>
+<li><strong><code>heapify_up</code></strong>: Reorders the heap after insertion to maintain the heap property.</li>
+<li><strong><code>heapify_down</code></strong>: Reorders the heap after extraction to maintain the heap property.</li>
+</ul>
+<h2 id="priority-queues"><a class="header" href="#priority-queues">Priority Queues</a></h2>
+<p>A priority queue is an abstract data type where each element has a priority. Elements are dequeued based on their priority rather than their order of insertion.</p>
+<h3 id="priority-queue-implementation-with-heap"><a class="header" href="#priority-queue-implementation-with-heap">Priority Queue Implementation with Heap</a></h3>
+<p>Here's an implementation of a priority queue using a max-heap in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct PriorityQueue&lt;T&gt; {
+    heap: MaxHeap&lt;T&gt;,
+}
+
+impl&lt;T: Ord&gt; PriorityQueue&lt;T&gt; {
+    fn new() -&gt; Self {
+        PriorityQueue {
+            heap: MaxHeap::new(),
+        }
+    }
+
+    fn enqueue(&amp;mut self, value: T) {
+        self.heap.insert(value);
+    }
+
+    fn dequeue(&amp;mut self) -&gt; Option&lt;T&gt; {
+        self.heap.extract_max()
+    }
+
+    fn peek(&amp;self) -&gt; Option&lt;&amp;T&gt; {
+        self.heap.heap.first()
+    }
+}
+
+fn main() {
+    let mut pq = PriorityQueue::new();
+    pq.enqueue(30);
+    pq.enqueue(10);
+    pq.enqueue(20);
+
+    println!("Priority Queue: {:?}", pq);
+
+    while let Some(max) = pq.dequeue() {
+        println!("Dequeued: {}", max);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-7"><a class="header" href="#code-explanation-7">Code Explanation</a></h3>
+<ul>
+<li><strong><code>enqueue</code></strong>: Adds an element to the priority queue with the given priority.</li>
+<li><strong><code>dequeue</code></strong>: Removes and returns the element with the highest priority.</li>
+<li><strong><code>peek</code></strong>: Returns a reference to the element with the highest priority without removing it.</li>
+</ul>
+<h2 id="real-world-examples-3"><a class="header" href="#real-world-examples-3">Real World Examples</a></h2>
+<h3 id="heaps-1"><a class="header" href="#heaps-1">Heaps</a></h3>
+<p>Heaps are often used in:</p>
+<ul>
+<li><strong>Heap Sort</strong>: A sorting algorithm that uses a heap to sort elements efficiently.</li>
+<li><strong>Task Scheduling</strong>: In operating systems, heaps can manage tasks based on their priority.</li>
+</ul>
+<h3 id="priority-queues-1"><a class="header" href="#priority-queues-1">Priority Queues</a></h3>
+<p>Priority queues are used in scenarios where tasks or elements need to be processed based on priority:</p>
+<ul>
+<li><strong>Dijkstra’s Algorithm</strong>: Used in shortest path algorithms where nodes are processed based on their distance.</li>
+<li><strong>Job Scheduling</strong>: In operating systems, priority queues manage processes or tasks based on their priority.</li>
+</ul>
+<h2 id="conclusion-7"><a class="header" href="#conclusion-7">Conclusion</a></h2>
+<p>Heaps and priority queues are powerful data structures for managing and accessing data with priority. By implementing these structures in Rust, you can handle various applications more efficiently and understand key algorithms better.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="graphs-and-graph-algorithms"><a class="header" href="#graphs-and-graph-algorithms">Graphs and Graph Algorithms</a></h1>
+<h2 id="introduction-8"><a class="header" href="#introduction-8">Introduction</a></h2>
+<p>In this lesson, we'll explore graphs and graph algorithms, their properties, and their usage in Rust. Graphs are fundamental data structures used in various applications such as social networks, routing algorithms, and more.</p>
+<h3 id="key-points-7"><a class="header" href="#key-points-7">Key Points</a></h3>
+<ul>
+<li><strong>Graphs</strong>: A collection of nodes (vertices) and edges connecting pairs of nodes.</li>
+<li><strong>Graph Algorithms</strong>: Techniques to traverse, search, and analyze graphs.</li>
+</ul>
+<h2 id="graphs"><a class="header" href="#graphs">Graphs</a></h2>
+<p>A graph is a data structure that consists of nodes (vertices) and edges connecting pairs of nodes. There are different types of graphs:</p>
+<ul>
+<li><strong>Undirected Graph</strong>: Edges have no direction; the connection between nodes is bidirectional.</li>
+<li><strong>Directed Graph (Digraph)</strong>: Edges have a direction; the connection between nodes is unidirectional.</li>
+<li><strong>Weighted Graph</strong>: Edges have weights or costs associated with them.</li>
+<li><strong>Unweighted Graph</strong>: Edges do not have weights.</li>
+</ul>
+<h3 id="basic-graph-implementation"><a class="header" href="#basic-graph-implementation">Basic Graph Implementation</a></h3>
+<p>Here’s a basic implementation of an undirected graph in Rust using adjacency lists:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+#[derive(Debug)]
+struct Graph {
+    adj_list: HashMap&lt;u32, Vec&lt;u32&gt;&gt;,
+}
+
+impl Graph {
+    fn new() -&gt; Self {
+        Graph {
+            adj_list: HashMap::new(),
+        }
+    }
+
+    fn add_edge(&amp;mut self, u: u32, v: u32) {
+        self.adj_list.entry(u).or_insert_with(Vec::new).push(v);
+        self.adj_list.entry(v).or_insert_with(Vec::new).push(u);
+    }
+
+    fn print(&amp;self) {
+        for (node, edges) in &amp;self.adj_list {
+            println!("Node {}: {:?}", node, edges);
+        }
+    }
+}
+
+fn main() {
+    let mut graph = Graph::new();
+    graph.add_edge(1, 2);
+    graph.add_edge(2, 3);
+    graph.add_edge(3, 4);
+
+    graph.print();
+}</code></pre></pre>
+<h3 id="code-explanation-8"><a class="header" href="#code-explanation-8">Code Explanation</a></h3>
+<ul>
+<li><strong><code>add_edge</code></strong>: Adds an undirected edge between two nodes.</li>
+<li><strong><code>print</code></strong>: Displays the adjacency list of the graph.</li>
+</ul>
+<h2 id="graph-algorithms"><a class="header" href="#graph-algorithms">Graph Algorithms</a></h2>
+<h3 id="depth-first-search-dfs"><a class="header" href="#depth-first-search-dfs">Depth-First Search (DFS)</a></h3>
+<p>Depth-First Search (DFS) is an algorithm for traversing or searching through a graph. It explores as far down a branch as possible before backtracking.</p>
+<p>Here’s a DFS implementation in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::{HashMap, HashSet};
+
+fn dfs(graph: &amp;HashMap&lt;u32, Vec&lt;u32&gt;&gt;, start: u32, visited: &amp;mut HashSet&lt;u32&gt;) {
+    if visited.contains(&amp;start) {
+        return;
+    }
+    visited.insert(start);
+    println!("Visited: {}", start);
+
+    if let Some(neighbors) = graph.get(&amp;start) {
+        for &amp;neighbor in neighbors {
+            dfs(graph, neighbor, visited);
+        }
+    }
+}
+
+fn main() {
+    let mut graph = HashMap::new();
+    graph.insert(1, vec![2, 3]);
+    graph.insert(2, vec![1, 4]);
+    graph.insert(3, vec![1, 4]);
+    graph.insert(4, vec![2, 3]);
+
+    let mut visited = HashSet::new();
+    dfs(&amp;graph, 1, &amp;mut visited);
+}</code></pre></pre>
+<h3 id="code-explanation-9"><a class="header" href="#code-explanation-9">Code Explanation</a></h3>
+<ul>
+<li><strong><code>dfs</code></strong>: Recursively visits nodes, marking them as visited, and explores all neighbors.</li>
+</ul>
+<h3 id="breadth-first-search-bfs"><a class="header" href="#breadth-first-search-bfs">Breadth-First Search (BFS)</a></h3>
+<p>Breadth-First Search (BFS) is an algorithm for traversing or searching through a graph. It explores all nodes at the present depth level before moving on to nodes at the next depth level.</p>
+<p>Here’s a BFS implementation in Rust:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::{HashMap, HashSet, VecDeque};
+
+fn bfs(graph: &amp;HashMap&lt;u32, Vec&lt;u32&gt;&gt;, start: u32) {
+    let mut visited = HashSet::new();
+    let mut queue = VecDeque::new();
+
+    visited.insert(start);
+    queue.push_back(start);
+
+    while let Some(node) = queue.pop_front() {
+        println!("Visited: {}", node);
+
+        if let Some(neighbors) = graph.get(&amp;node) {
+            for &amp;neighbor in neighbors {
+                if !visited.contains(&amp;neighbor) {
+                    visited.insert(neighbor);
+                    queue.push_back(neighbor);
+                }
+            }
+        }
+    }
+}
+
+fn main() {
+    let mut graph = HashMap::new();
+    graph.insert(1, vec![2, 3]);
+    graph.insert(2, vec![1, 4]);
+    graph.insert(3, vec![1, 4]);
+    graph.insert(4, vec![2, 3]);
+
+    bfs(&amp;graph, 1);
+}</code></pre></pre>
+<h3 id="code-explanation-10"><a class="header" href="#code-explanation-10">Code Explanation</a></h3>
+<ul>
+<li><strong><code>bfs</code></strong>: Uses a queue to explore nodes level by level, marking nodes as visited.</li>
+</ul>
+<h2 id="real-world-examples-4"><a class="header" href="#real-world-examples-4">Real World Examples</a></h2>
+<h3 id="graphs-1"><a class="header" href="#graphs-1">Graphs</a></h3>
+<p>Graphs are used in various applications such as:</p>
+<ul>
+<li><strong>Social Networks</strong>: Representing connections between users.</li>
+<li><strong>Routing Algorithms</strong>: Finding the shortest path in network routing and GPS navigation.</li>
+<li><strong>Recommendation Systems</strong>: Based on user preferences and item relationships.</li>
+</ul>
+<h3 id="depth-first-search-dfs-1"><a class="header" href="#depth-first-search-dfs-1">Depth-First Search (DFS)</a></h3>
+<p>DFS is used in:</p>
+<ul>
+<li><strong>Pathfinding Algorithms</strong>: For maze-solving or puzzle-solving.</li>
+<li><strong>Topological Sorting</strong>: In directed acyclic graphs (DAGs) for scheduling tasks.</li>
+</ul>
+<h3 id="breadth-first-search-bfs-1"><a class="header" href="#breadth-first-search-bfs-1">Breadth-First Search (BFS)</a></h3>
+<p>BFS is used in:</p>
+<ul>
+<li><strong>Shortest Path Algorithms</strong>: For finding the shortest path in unweighted graphs.</li>
+<li><strong>Level Order Traversal</strong>: In trees and graphs, such as hierarchical data processing.</li>
+</ul>
+<h2 id="conclusion-8"><a class="header" href="#conclusion-8">Conclusion</a></h2>
+<p>Graphs and their associated algorithms are crucial for solving complex problems in various domains. Understanding and implementing graph algorithms like DFS and BFS in Rust can help you tackle a wide range of real-world problems more effectively.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sorting-algorithms"><a class="header" href="#sorting-algorithms">Sorting Algorithms</a></h1>
+<h2 id="introduction-9"><a class="header" href="#introduction-9">Introduction</a></h2>
+<p>Sorting algorithms are fundamental in computer science for arranging data in a specific order. This lesson covers some of the most important sorting algorithms, including their properties, time complexities, and implementations in Rust.</p>
+<h3 id="key-points-8"><a class="header" href="#key-points-8">Key Points</a></h3>
+<ul>
+<li><strong>Sorting Algorithms</strong>: Techniques for ordering elements in a list or array.</li>
+<li><strong>Time Complexity</strong>: A measure of the amount of time an algorithm takes to complete based on the size of the input.</li>
+</ul>
+<h2 id="bubble-sort"><a class="header" href="#bubble-sort">Bubble Sort</a></h2>
+<p>Bubble Sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. This process is repeated until the list is sorted.</p>
+<h3 id="bubble-sort-implementation"><a class="header" href="#bubble-sort-implementation">Bubble Sort Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn bubble_sort&lt;T: Ord&gt;(arr: &amp;mut [T]) {
+    let mut n = arr.len();
+    let mut swapped = true;
+
+    while swapped {
+        swapped = false;
+        for i in 1..n {
+            if arr[i - 1] &gt; arr[i] {
+                arr.swap(i - 1, i);
+                swapped = true;
+            }
+        }
+        n -= 1;
+    }
+}
+
+fn main() {
+    let mut array = [64, 34, 25, 12, 22, 11, 90];
+    bubble_sort(&amp;mut array);
+    println!("Sorted array: {:?}", array);
+}</code></pre></pre>
+<h3 id="code-explanation-11"><a class="header" href="#code-explanation-11">Code Explanation</a></h3>
+<ul>
+<li><strong><code>bubble_sort</code></strong>: Iterates through the array, swapping adjacent elements if they are out of order, until no more swaps are needed.</li>
+<li><strong>Time Complexity</strong>: O(n²) in the worst and average cases; O(n) in the best case (when the array is already sorted).</li>
+</ul>
+<h2 id="selection-sort"><a class="header" href="#selection-sort">Selection Sort</a></h2>
+<p>Selection Sort is a simple sorting algorithm that divides the list into a sorted and unsorted region. It repeatedly selects the smallest (or largest) element from the unsorted region and moves it to the end of the sorted region.</p>
+<h3 id="selection-sort-implementation"><a class="header" href="#selection-sort-implementation">Selection Sort Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn selection_sort&lt;T: Ord&gt;(arr: &amp;mut [T]) {
+    let len = arr.len();
+    for i in 0..len {
+        let mut min_index = i;
+        for j in (i + 1)..len {
+            if arr[j] &lt; arr[min_index] {
+                min_index = j;
+            }
+        }
+        arr.swap(i, min_index);
+    }
+}
+
+fn main() {
+    let mut array = [64, 34, 25, 12, 22, 11, 90];
+    selection_sort(&amp;mut array);
+    println!("Sorted array: {:?}", array);
+}</code></pre></pre>
+<h3 id="code-explanation-12"><a class="header" href="#code-explanation-12">Code Explanation</a></h3>
+<ul>
+<li><strong><code>selection_sort</code></strong>: Finds the minimum element from the unsorted part of the array and swaps it with the first unsorted element.</li>
+<li><strong>Time Complexity</strong>: O(n²) for all cases (worst, average, and best).</li>
+</ul>
+<h2 id="insertion-sort"><a class="header" href="#insertion-sort">Insertion Sort</a></h2>
+<p>Insertion Sort builds the final sorted array one item at a time by repeatedly picking the next item and inserting it into its correct position in the already sorted part of the array.</p>
+<h3 id="insertion-sort-implementation"><a class="header" href="#insertion-sort-implementation">Insertion Sort Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn insertion_sort&lt;T: Ord&gt;(arr: &amp;mut [T]) {
+    let len = arr.len();
+    for i in 1..len {
+        let mut j = i;
+        while j &gt; 0 &amp;&amp; arr[j - 1] &gt; arr[j] {
+            arr.swap(j - 1, j);
+            j -= 1;
+        }
+    }
+}
+
+fn main() {
+    let mut array = [64, 34, 25, 12, 22, 11, 90];
+    insertion_sort(&amp;mut array);
+    println!("Sorted array: {:?}", array);
+}</code></pre></pre>
+<h3 id="code-explanation-13"><a class="header" href="#code-explanation-13">Code Explanation</a></h3>
+<ul>
+<li><strong><code>insertion_sort</code></strong>: Inserts each element into its correct position relative to the already sorted portion of the array.</li>
+<li><strong>Time Complexity</strong>: O(n²) in the worst case; O(n) in the best case (when the array is already sorted).</li>
+</ul>
+<h2 id="merge-sort"><a class="header" href="#merge-sort">Merge Sort</a></h2>
+<p>Merge Sort is a divide-and-conquer algorithm that divides the array into halves, recursively sorts each half, and then merges the sorted halves.</p>
+<h3 id="merge-sort-implementation"><a class="header" href="#merge-sort-implementation">Merge Sort Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn merge_sort&lt;T: Ord + Clone&gt;(arr: &amp;mut [T]) {
+    let len = arr.len();
+    if len &lt;= 1 {
+        return;
+    }
+
+    let mid = len / 2;
+    let mut left = arr[0..mid].to_vec();
+    let mut right = arr[mid..].to_vec();
+
+    merge_sort(&amp;mut left);
+    merge_sort(&amp;mut right);
+
+    merge(arr, &amp;left, &amp;right);
+}
+
+fn merge&lt;T: Ord + Clone&gt;(arr: &amp;mut [T], left: &amp;[T], right: &amp;[T]) {
+    let mut i = 0;
+    let mut j = 0;
+    let mut k = 0;
+
+    while i &lt; left.len() &amp;&amp; j &lt; right.len() {
+        if left[i] &lt;= right[j] {
+            arr[k] = left[i].clone();
+            i += 1;
+        } else {
+            arr[k] = right[j].clone();
+            j += 1;
+        }
+        k += 1;
+    }
+
+    while i &lt; left.len() {
+        arr[k] = left[i].clone();
+        i += 1;
+        k += 1;
+    }
+
+    while j &lt; right.len() {
+        arr[k] = right[j].clone();
+        j += 1;
+        k += 1;
+    }
+}
+
+fn main() {
+    let mut array = [64, 34, 25, 12, 22, 11, 90];
+    merge_sort(&amp;mut array);
+    println!("Sorted array: {:?}", array);
+}</code></pre></pre>
+<h3 id="code-explanation-14"><a class="header" href="#code-explanation-14">Code Explanation</a></h3>
+<ul>
+<li><strong><code>merge_sort</code></strong>: Recursively divides the array into halves, sorts each half, and then merges them.</li>
+<li><strong><code>merge</code></strong>: Merges two sorted arrays into a single sorted array.</li>
+<li><strong>Time Complexity</strong>: O(n log n) for all cases.</li>
+</ul>
+<h2 id="quick-sort"><a class="header" href="#quick-sort">Quick Sort</a></h2>
+<p>Quick Sort is a divide-and-conquer algorithm that selects a pivot element, partitions the array into elements less than and greater than the pivot, and recursively sorts the partitions.</p>
+<h3 id="quick-sort-implementation"><a class="header" href="#quick-sort-implementation">Quick Sort Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn quick_sort&lt;T: Ord + Clone&gt;(arr: &amp;mut [T]) {
+    if arr.len() &lt;= 1 {
+        return;
+    }
+    let pivot_index = partition(arr);
+    let (left, right) = arr.split_at_mut(pivot_index);
+    quick_sort(&amp;mut left[0..pivot_index]);
+    quick_sort(&amp;mut right[1..]);
+}
+
+fn partition&lt;T: Ord + Clone&gt;(arr: &amp;mut [T]) -&gt; usize {
+    let pivot_index = arr.len() / 2;
+    let pivot = arr[pivot_index].clone();
+    arr.swap(pivot_index, arr.len() - 1);
+
+    let mut i = 0;
+    for j in 0..arr.len() - 1 {
+        if arr[j] &lt; pivot {
+            arr.swap(i, j);
+            i += 1;
+        }
+    }
+    arr.swap(i, arr.len() - 1);
+    i
+}
+
+fn main() {
+    let mut array = [64, 34, 25, 12, 22, 11, 90];
+    quick_sort(&amp;mut array);
+    println!("Sorted array: {:?}", array);
+}
+</code></pre></pre>
+<h3 id="code-explanation-15"><a class="header" href="#code-explanation-15">Code Explanation</a></h3>
+<ul>
+<li><strong><code>quick_sort</code></strong>: Selects a pivot, partitions the array, and recursively sorts the partitions.</li>
+<li><strong><code>partition</code></strong>: Rearranges elements around the pivot and returns the pivot index.</li>
+<li><strong>Time Complexity</strong>: O(n log n) on average; O(n²) in the worst case.</li>
+</ul>
+<h2 id="real-world-examples-5"><a class="header" href="#real-world-examples-5">Real World Examples</a></h2>
+<h3 id="bubble-sort-1"><a class="header" href="#bubble-sort-1">Bubble Sort</a></h3>
+<ul>
+<li><strong>Educational Purposes</strong>: Used for teaching basic sorting concepts due to its simplicity.</li>
+</ul>
+<h3 id="selection-sort-1"><a class="header" href="#selection-sort-1">Selection Sort</a></h3>
+<ul>
+<li><strong>Simple Use Cases</strong>: Useful when memory is limited, and simplicity is preferred over performance.</li>
+</ul>
+<h3 id="insertion-sort-1"><a class="header" href="#insertion-sort-1">Insertion Sort</a></h3>
+<ul>
+<li><strong>Small Arrays</strong>: Efficient for small or partially sorted arrays, like in certain hybrid sorting algorithms.</li>
+</ul>
+<h3 id="merge-sort-1"><a class="header" href="#merge-sort-1">Merge Sort</a></h3>
+<ul>
+<li><strong>Large Data Sets</strong>: Used in external sorting algorithms where data cannot fit into memory, like sorting large files.</li>
+</ul>
+<h3 id="quick-sort-1"><a class="header" href="#quick-sort-1">Quick Sort</a></h3>
+<ul>
+<li><strong>General Purpose</strong>: Efficient for most practical use cases due to its average-case performance, used in standard libraries and applications.</li>
+</ul>
+<h2 id="conclusion-9"><a class="header" href="#conclusion-9">Conclusion</a></h2>
+<p>Sorting algorithms are essential tools in computer science, with each algorithm offering different trade-offs in terms of complexity and efficiency. Understanding and implementing these algorithms in Rust helps you solve various sorting problems and grasp fundamental computer science concepts.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="searching-algorithms"><a class="header" href="#searching-algorithms">Searching Algorithms</a></h1>
+<h2 id="introduction-10"><a class="header" href="#introduction-10">Introduction</a></h2>
+<p>Searching algorithms are crucial for finding specific elements in a data structure efficiently. This lesson covers some important searching algorithms, including their properties, time complexities, and implementations in Rust.</p>
+<h3 id="key-points-9"><a class="header" href="#key-points-9">Key Points</a></h3>
+<ul>
+<li><strong>Searching Algorithms</strong>: Techniques for finding an element in a data structure.</li>
+<li><strong>Time Complexity</strong>: A measure of the amount of time an algorithm takes to find an element based on the size of the input.</li>
+</ul>
+<h2 id="linear-search"><a class="header" href="#linear-search">Linear Search</a></h2>
+<p>Linear Search is a simple algorithm that checks each element in a list sequentially until the target element is found or the end of the list is reached.</p>
+<h3 id="linear-search-implementation"><a class="header" href="#linear-search-implementation">Linear Search Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn linear_search&lt;T: PartialEq&gt;(arr: &amp;[T], target: T) -&gt; Option&lt;usize&gt; {
+    for (index, item) in arr.iter().enumerate() {
+        if *item == target {
+            return Some(index);
+        }
+    }
+    None
+}
+
+fn main() {
+    let array = [10, 20, 30, 40, 50];
+    let target = 30;
+    match linear_search(&amp;array, target) {
+        Some(index) =&gt; println!("Found {} at index {}", target, index),
+        None =&gt; println!("{} not found in the array", target),
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-16"><a class="header" href="#code-explanation-16">Code Explanation</a></h3>
+<ul>
+<li><strong><code>linear_search</code></strong>: Iterates through the array and returns the index of the target element if found; otherwise, returns <code>None</code>.</li>
+<li><strong>Time Complexity</strong>: O(n) for all cases.</li>
+</ul>
+<h2 id="binary-search"><a class="header" href="#binary-search">Binary Search</a></h2>
+<p>Binary Search is an efficient algorithm for finding an element in a sorted array by repeatedly dividing the search interval in half.</p>
+<h3 id="binary-search-implementation"><a class="header" href="#binary-search-implementation">Binary Search Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn binary_search&lt;T: Ord&gt;(arr: &amp;[T], target: T) -&gt; Option&lt;usize&gt; {
+    let mut low = 0;
+    let mut high = arr.len() as isize - 1;
+
+    while low &lt;= high {
+        let mid = (low + high) / 2;
+        match arr[mid as usize].cmp(&amp;target) {
+            std::cmp::Ordering::Less =&gt; low = mid + 1,
+            std::cmp::Ordering::Greater =&gt; high = mid - 1,
+            std::cmp::Ordering::Equal =&gt; return Some(mid as usize),
+        }
+    }
+    None
+}
+
+fn main() {
+    let array = [10, 20, 30, 40, 50];
+    let target = 30;
+    match binary_search(&amp;array, target) {
+        Some(index) =&gt; println!("Found {} at index {}", target, index),
+        None =&gt; println!("{} not found in the array", target),
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-17"><a class="header" href="#code-explanation-17">Code Explanation</a></h3>
+<ul>
+<li><strong><code>binary_search</code></strong>: Repeatedly divides the search interval in half to locate the target element.</li>
+<li><strong>Time Complexity</strong>: O(log n) for all cases.</li>
+</ul>
+<h2 id="interpolation-search"><a class="header" href="#interpolation-search">Interpolation Search</a></h2>
+<p>Interpolation Search is an improved version of Binary Search for uniformly distributed data. It estimates the position of the target element based on its value.</p>
+<h3 id="interpolation-search-implementation"><a class="header" href="#interpolation-search-implementation">Interpolation Search Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn interpolation_search&lt;T: Ord&gt;(arr: &amp;[T], target: T) -&gt; Option&lt;usize&gt; {
+    let mut low = 0;
+    let mut high = arr.len() as isize - 1;
+
+    while low &lt;= high &amp;&amp; arr[low as usize] &lt;= target &amp;&amp; arr[high as usize] &gt;= target {
+        if low == high {
+            return if arr[low as usize] == target {
+                Some(low as usize)
+            } else {
+                None
+            };
+        }
+
+        let pos = low + (((target as usize - arr[low as usize] as usize) * (high - low)) / (arr[high as usize] as usize - arr[low as usize] as usize)) as isize;
+
+        match arr[pos as usize].cmp(&amp;target) {
+            std::cmp::Ordering::Less =&gt; low = pos + 1,
+            std::cmp::Ordering::Greater =&gt; high = pos - 1,
+            std::cmp::Ordering::Equal =&gt; return Some(pos as usize),
+        }
+    }
+    None
+}
+
+fn main() {
+    let array = [10, 20, 30, 40, 50];
+    let target = 30;
+    match interpolation_search(&amp;array, target) {
+        Some(index) =&gt; println!("Found {} at index {}", target, index),
+        None =&gt; println!("{} not found in the array", target),
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-18"><a class="header" href="#code-explanation-18">Code Explanation</a></h3>
+<ul>
+<li><strong><code>interpolation_search</code></strong>: Estimates the position of the target based on its value relative to the values at the boundaries.</li>
+<li><strong>Time Complexity</strong>: O(log log n) for uniformly distributed data; O(n) in the worst case.</li>
+</ul>
+<h2 id="jump-search"><a class="header" href="#jump-search">Jump Search</a></h2>
+<p>Jump Search is an algorithm that works on sorted arrays by jumping ahead by a fixed number of elements and performing a linear search within the block where the target might be found.</p>
+<h3 id="jump-search-implementation"><a class="header" href="#jump-search-implementation">Jump Search Implementation</a></h3>
+<pre><pre class="playground"><code class="language-rust">fn jump_search&lt;T: Ord&gt;(arr: &amp;[T], target: T) -&gt; Option&lt;usize&gt; {
+    let length = arr.len();
+    let jump = (length as f64).sqrt() as usize;
+    let mut prev = 0;
+    let mut curr = 0;
+
+    while curr &lt; length &amp;&amp; arr[curr] &lt; target {
+        prev = curr;
+        curr = (curr + jump).min(length - 1);
+    }
+
+    for i in prev..=curr {
+        if arr[i] == target {
+            return Some(i);
+        }
+    }
+    None
+}
+
+fn main() {
+    let array = [10, 20, 30, 40, 50];
+    let target = 30;
+    match jump_search(&amp;array, target) {
+        Some(index) =&gt; println!("Found {} at index {}", target, index),
+        None =&gt; println!("{} not found in the array", target),
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-19"><a class="header" href="#code-explanation-19">Code Explanation</a></h3>
+<ul>
+<li><strong><code>jump_search</code></strong>: Jumps ahead by a fixed number of steps and performs a linear search within the current block.</li>
+<li><strong>Time Complexity</strong>: O(√n) for all cases.</li>
+</ul>
+<h2 id="real-world-examples-6"><a class="header" href="#real-world-examples-6">Real World Examples</a></h2>
+<h3 id="linear-search-1"><a class="header" href="#linear-search-1">Linear Search</a></h3>
+<ul>
+<li><strong>Small or Unsorted Data</strong>: Useful for simple cases where the data size is small or the data is not sorted.</li>
+</ul>
+<h3 id="binary-search-1"><a class="header" href="#binary-search-1">Binary Search</a></h3>
+<ul>
+<li><strong>Sorted Data</strong>: Efficient for searching in sorted datasets such as in a database index or when using sorted lists.</li>
+</ul>
+<h3 id="interpolation-search-1"><a class="header" href="#interpolation-search-1">Interpolation Search</a></h3>
+<ul>
+<li><strong>Uniformly Distributed Data</strong>: Useful for datasets where elements are uniformly distributed, such as numerical ranges.</li>
+</ul>
+<h3 id="jump-search-1"><a class="header" href="#jump-search-1">Jump Search</a></h3>
+<ul>
+<li><strong>Sorted Data with Large Gaps</strong>: Effective for large datasets where you want a balance between linear search and binary search.</li>
+</ul>
+<h2 id="conclusion-10"><a class="header" href="#conclusion-10">Conclusion</a></h2>
+<p>Searching algorithms are essential for finding elements in various data structures efficiently. Understanding and implementing these algorithms in Rust helps you solve searching problems effectively and grasp fundamental computer science concepts.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-programming"><a class="header" href="#dynamic-programming">Dynamic Programming</a></h1>
+<h2 id="introduction-11"><a class="header" href="#introduction-11">Introduction</a></h2>
+<p>Dynamic Programming (DP) is a powerful technique for solving complex problems by breaking them down into simpler subproblem's. It is particularly useful for optimization problems where overlapping subproblem's and optimal substructure are present. In this lesson, we will explore the concepts of Dynamic Programming, its key principles, and how to implement it in Rust.</p>
+<h3 id="key-points-10"><a class="header" href="#key-points-10">Key Points</a></h3>
+<ul>
+<li><strong>Dynamic Programming</strong>: A method for solving problems by breaking them into simpler overlapping subproblem's and storing their solutions.</li>
+<li><strong>Optimal Substructure</strong>: A property that an optimal solution to a problem contains optimal solutions to its subproblem's.</li>
+<li><strong>Overlapping Subproblem</strong>: When the same subproblem's are solved multiple times in the process of solving a larger problem.</li>
+</ul>
+<h2 id="key-concepts"><a class="header" href="#key-concepts">Key Concepts</a></h2>
+<h3 id="memoization"><a class="header" href="#memoization">Memoization</a></h3>
+<p>Memoization is a top-down approach where you solve the problem by recursion and store the results of subproblem's to avoid redundant calculations.</p>
+<h3 id="tabulation"><a class="header" href="#tabulation">Tabulation</a></h3>
+<p>Tabulation is a bottom-up approach where you solve all possible subproblem's iteratively and store their results in a table, building up the solution to the problem step by step.</p>
+<h2 id="example-problems"><a class="header" href="#example-problems">Example Problems</a></h2>
+<h3 id="fibonacci-sequence"><a class="header" href="#fibonacci-sequence">Fibonacci Sequence</a></h3>
+<p>The Fibonacci sequence is a classic example to illustrate Dynamic Programming. Each number in the sequence is the sum of the two preceding ones. The problem can be solved using both memoization and tabulation.</p>
+<h4 id="recursive-solution-naive-approach"><a class="header" href="#recursive-solution-naive-approach">Recursive Solution (Naive Approach)</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn fibonacci(n: u32) -&gt; u32 {
+    match n {
+        0 =&gt; 0,
+        1 =&gt; 1,
+        _ =&gt; fibonacci(n - 1) + fibonacci(n - 2),
+    }
+}
+
+fn main() {
+    let n = 10;
+    println!("Fibonacci of {} is {}", n, fibonacci(n));
+}</code></pre></pre>
+<h4 id="memoization-approach"><a class="header" href="#memoization-approach">Memoization Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn fibonacci_memo(n: u32, memo: &amp;mut HashMap&lt;u32, u32&gt;) -&gt; u32 {
+    if let Some(&amp;result) = memo.get(&amp;n) {
+        return result;
+    }
+
+    let result = match n {
+        0 =&gt; 0,
+        1 =&gt; 1,
+        _ =&gt; fibonacci_memo(n - 1, memo) + fibonacci_memo(n - 2, memo),
+    };
+
+    memo.insert(n, result);
+    result
+}
+
+fn main() {
+    let n = 10;
+    let mut memo = HashMap::new();
+    println!("Fibonacci of {} is {}", n, fibonacci_memo(n, &amp;mut memo));
+}</code></pre></pre>
+<h4 id="tabulation-approach"><a class="header" href="#tabulation-approach">Tabulation Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn fibonacci_tab(n: u32) -&gt; u32 {
+    if n == 0 {
+        return 0;
+    } else if n == 1 {
+        return 1;
+    }
+
+    let mut table = vec![0; (n + 1) as usize];
+    table[1] = 1;
+
+    for i in 2..=n {
+        table[i as usize] = table[(i - 1) as usize] + table[(i - 2) as usize];
+    }
+
+    table[n as usize]
+}
+
+fn main() {
+    let n = 10;
+    println!("Fibonacci of {} is {}", n, fibonacci_tab(n));
+}</code></pre></pre>
+<h3 id="knapsack-problem"><a class="header" href="#knapsack-problem">Knapsack Problem</a></h3>
+<p>The Knapsack Problem is a classic optimization problem where you must determine the most valuable combination of items to include in a knapsack without exceeding its capacity.</p>
+<h4 id="problem-definition"><a class="header" href="#problem-definition">Problem Definition</a></h4>
+<p>Given weights and values of items, and a knapsack capacity, find the maximum value that can be obtained by picking items to fit into the knapsack.</p>
+<h4 id="tabulation-approach-1"><a class="header" href="#tabulation-approach-1">Tabulation Approach</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn knapsack(weights: &amp;[usize], values: &amp;[usize], capacity: usize) -&gt; usize {
+    let n = weights.len();
+    let mut dp = vec![0; capacity + 1];
+
+    for i in 0..n {
+        for w in (weights[i]..=capacity).rev() {
+            dp[w] = dp[w].max(dp[w - weights[i]] + values[i]);
+        }
+    }
+
+    dp[capacity]
+}
+
+fn main() {
+    let weights = vec![1, 2, 3];
+    let values = vec![10, 15, 40];
+    let capacity = 6;
+    println!("Maximum value in knapsack: {}", knapsack(&amp;weights, &amp;values, capacity));
+}</code></pre></pre>
+<h3 id="real-world-examples-7"><a class="header" href="#real-world-examples-7">Real World Examples</a></h3>
+<ul>
+<li><strong>Fibonacci Sequence</strong>: Useful in problems requiring calculation of sequence values or optimization problems involving recursive calculations.</li>
+<li><strong>Knapsack Problem</strong>: Common in resource allocation problems, such as budgeting or inventory management.</li>
+</ul>
+<h2 id="conclusion-11"><a class="header" href="#conclusion-11">Conclusion</a></h2>
+<p>Dynamic Programming is a versatile technique for solving optimization problems by breaking them down into simpler subproblems and storing their solutions. Understanding memoization and tabulation helps you tackle complex problems more efficiently and gain deeper insights into algorithmic problem-solving.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recursion-and-backtracking"><a class="header" href="#recursion-and-backtracking">Recursion and Backtracking</a></h1>
+<h2 id="introduction-12"><a class="header" href="#introduction-12">Introduction</a></h2>
+<p>Recursion and backtracking are fundamental techniques in computer science for solving complex problems by breaking them down into simpler subproblem's. They are especially useful for problems involving combinatorial search, optimization, and constraint satisfaction. In this lesson, we'll explore these concepts, their principles, and how to implement them in Rust.</p>
+<h3 id="key-points-11"><a class="header" href="#key-points-11">Key Points</a></h3>
+<ul>
+<li><strong>Recursion</strong>: A technique where a function calls itself to solve smaller instances of the same problem.</li>
+<li><strong>Backtracking</strong>: A method for solving problems by trying out possible solutions and reverting to previous steps if a solution doesn't work out.</li>
+</ul>
+<h2 id="recursion"><a class="header" href="#recursion">Recursion</a></h2>
+<h3 id="definition"><a class="header" href="#definition">Definition</a></h3>
+<p>Recursion is a method of solving problems where the solution depends on solutions to smaller instances of the same problem. A recursive function is one that calls itself directly or indirectly.</p>
+<h3 id="key-concepts-1"><a class="header" href="#key-concepts-1">Key Concepts</a></h3>
+<ol>
+<li><strong>Base Case</strong>: The condition under which the recursion stops. It's crucial for preventing infinite recursion.</li>
+<li><strong>Recursive Case</strong>: The part of the function where it calls itself with modified arguments.</li>
+</ol>
+<h3 id="example-factorial"><a class="header" href="#example-factorial">Example: Factorial</a></h3>
+<p>The factorial of a non-negative integer <code>n</code> is the product of all positive integers less than or equal to <code>n</code>. It can be defined recursively as:</p>
+<ul>
+<li><code>factorial(n) = n * factorial(n - 1)</code></li>
+<li><code>factorial(0) = 1</code> (base case)</li>
+</ul>
+<h4 id="rust-implementation"><a class="header" href="#rust-implementation">Rust Implementation</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn factorial(n: u32) -&gt; u32 {
+    if n == 0 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+fn main() {
+    let n = 5;
+    println!("Factorial of {} is {}", n, factorial(n));
+}</code></pre></pre>
+<h3 id="explanation"><a class="header" href="#explanation">Explanation</a></h3>
+<ul>
+<li><strong>Base Case</strong>: If <code>n</code> is 0, return 1.</li>
+<li><strong>Recursive Case</strong>: For any other <code>n</code>, return <code>n * factorial(n - 1)</code>.</li>
+</ul>
+<h2 id="backtracking"><a class="header" href="#backtracking">Backtracking</a></h2>
+<h3 id="definition-1"><a class="header" href="#definition-1">Definition</a></h3>
+<p>Backtracking is an algorithmic technique for solving problems by exploring all potential solutions and discarding those that do not meet the constraints. It involves trying out possible solutions, and if a solution is not feasible, it reverts to a previous step and tries another path.</p>
+<h3 id="key-concepts-2"><a class="header" href="#key-concepts-2">Key Concepts</a></h3>
+<ol>
+<li><strong>Solution Space</strong>: The set of all possible solutions.</li>
+<li><strong>Feasible Solution</strong>: A solution that satisfies the problem constraints.</li>
+<li><strong>Backtrack</strong>: When a solution path is found to be invalid, revert to a previous step and try a different path.</li>
+</ol>
+<h3 id="example-n-queens-problem"><a class="header" href="#example-n-queens-problem">Example: N-Queens Problem</a></h3>
+<p>The N-Queens problem involves placing <code>N</code> queens on an <code>N x N</code> chessboard so that no two queens threaten each other. The challenge is to find all possible arrangements.</p>
+<h4 id="rust-implementation-1"><a class="header" href="#rust-implementation-1">Rust Implementation</a></h4>
+<pre><pre class="playground"><code class="language-rust">fn is_safe(board: &amp;Vec&lt;Vec&lt;bool&gt;&gt;, row: usize, col: usize) -&gt; bool {
+    // Check this column on previous rows
+    for i in 0..row {
+        if board[i][col] {
+            return false;
+        }
+    }
+
+    // Check upper-left diagonal
+    let mut i = row;
+    let mut j = col;
+    while i &gt;= 0 &amp;&amp; j &gt;= 0 {
+        if board[i][j] {
+            return false;
+        }
+        if i == 0 || j == 0 {
+            break;
+        }
+        i -= 1;
+        j -= 1;
+    }
+
+    // Check upper-right diagonal
+    i = row;
+    j = col;
+    while i &gt;= 0 &amp;&amp; j &lt; board.len() {
+        if board[i][j] {
+            return false;
+        }
+        if i == 0 || j == board.len() - 1 {
+            break;
+        }
+        i -= 1;
+        j += 1;
+    }
+
+    true
+}
+
+fn solve_n_queens(board: &amp;mut Vec&lt;Vec&lt;bool&gt;&gt;, row: usize) -&gt; bool {
+    if row &gt;= board.len() {
+        return true;
+    }
+
+    for col in 0..board.len() {
+        if is_safe(board, row, col) {
+            board[row][col] = true;
+            if solve_n_queens(board, row + 1) {
+                return true;
+            }
+            board[row][col] = false;
+        }
+    }
+
+    false
+}
+
+fn main() {
+    let n = 4;
+    let mut board = vec![vec![false; n]; n];
+    if solve_n_queens(&amp;mut board, 0) {
+        println!("Solution found:");
+        for row in board {
+            for cell in row {
+                if cell {
+                    print!("Q ");
+                } else {
+                    print!(". ");
+                }
+            }
+            println!();
+        }
+    } else {
+        println!("No solution found.");
+    }
+}</code></pre></pre>
+<h3 id="explanation-1"><a class="header" href="#explanation-1">Explanation</a></h3>
+<ol>
+<li><strong><code>is_safe</code> Function</strong>: Checks if it's safe to place a queen at a given position by verifying column and diagonal constraints.</li>
+<li><strong><code>solve_n_queens</code> Function</strong>: Tries placing queens in all columns of the current row and recurses to solve for the next row. If placing a queen leads to a solution, it returns <code>true</code>; otherwise, it backtracks by removing the queen and trying the next column.</li>
+<li><strong><code>main</code> Function</strong>: Initializes the board and starts the solving process.</li>
+</ol>
+<h2 id="real-world-examples-8"><a class="header" href="#real-world-examples-8">Real World Examples</a></h2>
+<h3 id="recursion-1"><a class="header" href="#recursion-1">Recursion</a></h3>
+<ul>
+<li><strong>File System Traversal</strong>: Navigating directories and files using recursion.</li>
+<li><strong>Tree Traversal</strong>: Traversing nodes in a hierarchical tree structure.</li>
+</ul>
+<h3 id="backtracking-1"><a class="header" href="#backtracking-1">Backtracking</a></h3>
+<ul>
+<li><strong>Sudoku Solver</strong>: Finding a solution to Sudoku puzzles by trying possible values and backtracking if needed.</li>
+<li><strong>Path-finding Problems</strong>: Finding a path through a maze or grid by exploring possible paths and retracting when encountering obstacles.</li>
+</ul>
+<h2 id="conclusion-12"><a class="header" href="#conclusion-12">Conclusion</a></h2>
+<p>Recursion and backtracking are essential techniques for solving complex problems by breaking them down into simpler subproblems and exploring all possible solutions. Mastering these techniques can enhance your problem-solving skills and help you tackle a wide range of algorithmic challenges.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="enhancing-your-skills"><a class="header" href="#enhancing-your-skills">Enhancing Your Skills</a></h1>
+<p>To solidify your understanding of the concepts covered in this book, here are three recommended projects that will help you apply your knowledge of data structures, algorithms, and programming techniques in Rust. Each project offers practical experience with different aspects of computer science and software development.</p>
+<h2 id="1-task-scheduler"><a class="header" href="#1-task-scheduler">1. Task Scheduler</a></h2>
+<h3 id="description"><a class="header" href="#description">Description</a></h3>
+<p>Build a task scheduler application that allows users to schedule tasks with different priorities. The scheduler should handle task execution based on priority and provide a user interface to manage tasks.</p>
+<h3 id="skills-used"><a class="header" href="#skills-used">Skills Used</a></h3>
+<ul>
+<li><strong>Data Structures</strong>: Utilize priority queues (heaps) to manage tasks according to their priority.</li>
+<li><strong>Algorithms</strong>: Implement scheduling algorithms to determine the order of task execution.</li>
+<li><strong>Recursion and Backtracking</strong>: Apply these techniques for complex scheduling scenarios, such as conflict resolution or optimization.</li>
+</ul>
+<h3 id="features-to-implement"><a class="header" href="#features-to-implement">Features to Implement</a></h3>
+<ul>
+<li>Add, remove, and modify tasks.</li>
+<li>Set and update task priorities.</li>
+<li>View tasks sorted by their scheduled execution order.</li>
+</ul>
+<h2 id="2-graph-based-navigation-system"><a class="header" href="#2-graph-based-navigation-system">2. Graph-Based Navigation System</a></h2>
+<h3 id="description-1"><a class="header" href="#description-1">Description</a></h3>
+<p>Create a navigation system that uses graph algorithms to find the shortest path between locations on a map. The map can be represented as a 2D grid or a more complex graph with weighted edges.</p>
+<h3 id="skills-used-1"><a class="header" href="#skills-used-1">Skills Used</a></h3>
+<ul>
+<li><strong>Graphs</strong>: Model the map as a graph with nodes and edges.</li>
+<li><strong>Algorithms</strong>: Implement algorithms such as Dijkstra’s or A* to find the shortest path.</li>
+<li><strong>Dynamic Programming</strong>: Use dynamic programming techniques to optimize path-finding or related calculations.</li>
+</ul>
+<h3 id="features-to-implement-1"><a class="header" href="#features-to-implement-1">Features to Implement</a></h3>
+<ul>
+<li>Add locations and define routes between them.</li>
+<li>Calculate and display the shortest path between two points.</li>
+<li>Optionally, add route preferences (e.g., fastest, shortest, least traffic).</li>
+</ul>
+<h2 id="3-sudoku-solver"><a class="header" href="#3-sudoku-solver">3. Sudoku Solver</a></h2>
+<h3 id="description-2"><a class="header" href="#description-2">Description</a></h3>
+<p>Develop a Sudoku solver that uses backtracking to solve Sudoku puzzles. The solver should be capable of handling puzzles of varying difficulty levels and provide solutions or indicate if the puzzle is unsolvable.</p>
+<h3 id="skills-used-2"><a class="header" href="#skills-used-2">Skills Used</a></h3>
+<ul>
+<li><strong>Backtracking</strong>: Implement the backtracking algorithm to explore possible solutions and backtrack when needed.</li>
+<li><strong>Recursion</strong>: Use recursion to solve subproblem's as part of the backtracking approach.</li>
+<li><strong>Data Structures</strong>: Utilize arrays or matrices to represent and manipulate the Sudoku grid.</li>
+</ul>
+<h3 id="features-to-implement-2"><a class="header" href="#features-to-implement-2">Features to Implement</a></h3>
+<ul>
+<li>Load and display Sudoku puzzles.</li>
+<li>Solve the puzzle using backtracking and display the solution.</li>
+<li>Optionally, add features for puzzle generation or solution validation.</li>
+</ul>
+<h2 id="conclusion-13"><a class="header" href="#conclusion-13">Conclusion</a></h2>
+<p>These projects provide hands-on experience with the key concepts covered in this book. By working on them, you'll gain practical insights into how data structures and algorithms are used in real-world applications, helping you deepen your understanding and improve your programming skills.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contact"><a class="header" href="#contact">Contact</a></h1>
 <p>Please contact me if you have any questions, feedback, or suggestions. Im active on all social media below.</p>
 <ul>

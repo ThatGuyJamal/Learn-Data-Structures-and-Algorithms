@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><a href="../lessons/6.html"><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</a></li><li class="chapter-item expanded "><a href="../lessons/7.html"><strong aria-hidden="true">7.</strong> Binary Trees</a></li><li class="chapter-item expanded "><a href="../lessons/8.html"><strong aria-hidden="true">8.</strong> Heaps and Priority Queues</a></li><li class="chapter-item expanded "><a href="../lessons/9.html"><strong aria-hidden="true">9.</strong> Graphs and Graph Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/10.html"><strong aria-hidden="true">10.</strong> Sorting Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/11.html"><strong aria-hidden="true">11.</strong> Searching Algorithms</a></li><li class="chapter-item expanded "><a href="../lessons/12.html"><strong aria-hidden="true">12.</strong> Dynamic Programming</a></li><li class="chapter-item expanded "><a href="../lessons/13.html"><strong aria-hidden="true">13.</strong> Recursion and Backtracking</a></li><li class="chapter-item expanded "><a href="../lessons/14.html"><strong aria-hidden="true">14.</strong> Recommended Projects</a></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -329,6 +329,22 @@ let c: (i32, &amp;str) = (1, "hello");
 // bool is a boolean type
 let d: bool = true;
 <span class="boring">}</span></code></pre></pre>
+<h3 id="generics"><a class="header" href="#generics">Generics</a></h3>
+<p>Rust supports generic programming with generics. Generics are used to write reusable code with different types.</p>
+<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span>fn add&lt;T: std::ops::Add&lt;Output = T&gt;&gt;(a: T, b: T) -&gt; T {
+    a + b
+}
+
+let result = add(1, 2);
+println!("Result: {:?}", result);
+
+let result = add(1.3, 2.3);
+println!("Result: {:?}", result);
+<span class="boring">}</span></code></pre></pre>
+<p>This code will work with any type that implements the <code>std::ops::Add</code> trait. For example, <code>i32</code> and <code>f32</code> can both be passed
+as arguments to the <code>add</code> function and their sum will be returned.</p>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
 <p>In this episode, we've set up the Rust development environment, explored some basic syntax and features of Rust, and wrote our first Rust program. In the next episode, we will dive into understanding Big O Notation and analyzing time complexity.</p>
 <p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next episode!</p>
