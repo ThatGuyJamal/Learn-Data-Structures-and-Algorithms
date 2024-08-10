@@ -15,6 +15,12 @@ In this series, you will:
 - Learn how to analyze and evaluate the efficiency of algorithms using Big O Notation.
 - See practical implementations of these concepts in Rust, a modern systems programming language.
 
+## Prerequisites
+
+- Basic knowledge of computer science
+- Willingness to learn
+- Following me on [X](https://x.com/codingwithjamal) (Twitter)
+
 ## Why Data Structures and Algorithms?
 
 Data structures and algorithms form the backbone of computer science. They are essential for:

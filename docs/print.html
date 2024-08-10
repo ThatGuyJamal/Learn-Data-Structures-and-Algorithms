@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.</strong> Linked Lists</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Stacks and Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">Introduction</a></li><li class="chapter-item expanded "><a href="lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">5.</strong> Stacks and Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -188,6 +188,12 @@ the YouTube series <a href="https://www.youtube.com/playlist?list=PLl0-VFGqwyIvR
 <li>Gain a solid understanding of fundamental data structures and algorithms.</li>
 <li>Learn how to analyze and evaluate the efficiency of algorithms using Big O Notation.</li>
 <li>See practical implementations of these concepts in Rust, a modern systems programming language.</li>
+</ul>
+<h2 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h2>
+<ul>
+<li>Basic knowledge of computer science</li>
+<li>Willingness to learn</li>
+<li>Following me on <a href="https://x.com/codingwithjamal">X</a> (Twitter)</li>
 </ul>
 <h2 id="why-data-structures-and-algorithms"><a class="header" href="#why-data-structures-and-algorithms">Why Data Structures and Algorithms?</a></h2>
 <p>Data structures and algorithms form the backbone of computer science. They are essential for:</p>
@@ -664,6 +670,188 @@ months in a year. These values never change.</p>
 <p>Both arrays and vectors allow for constant-time (O(1)) access to elements via indexing. This makes them highly efficient for tasks where you need to frequently access or modify individual elements.</p>
 <h2 id="conclusion-2"><a class="header" href="#conclusion-2">Conclusion</a></h2>
 <p>Arrays and vectors are indispensable in computer science due to their efficiency, simplicity, and versatility. Arrays offer speed and predictability for fixed-size data, while vectors provide the flexibility needed to handle dynamic data sets. Mastery of these structures lays the groundwork for understanding more complex data structures and algorithms, making them a key part of any programmer's toolkit.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="learning-linked-lists"><a class="header" href="#learning-linked-lists">Learning Linked Lists</a></h1>
+<h2 id="introduction-3"><a class="header" href="#introduction-3">Introduction</a></h2>
+<p>In this lesson, we'll explore linked lists, their properties and usage in Rust.</p>
+<h2 id="key-points-2"><a class="header" href="#key-points-2">Key Points</a></h2>
+<ul>
+<li>Linked lists: A linear data structure where each element (node) points to the next node in the sequence, forming a chain-like structure.</li>
+<li>Singly linked lists: A linked list where each element (node) points to the next node in the sequence.</li>
+<li>Doubly linked lists: A linked list where each element (node) points to the next and previous nodes in the sequence.</li>
+</ul>
+<h3 id="what-is-a-linked-list"><a class="header" href="#what-is-a-linked-list">What is a linked list?</a></h3>
+<p>A linked list is a linear data structure where each element (node) points to the next node in the sequence, forming a chain-like structure.</p>
+<h2 id="singly-linked-lists"><a class="header" href="#singly-linked-lists">Singly Linked Lists</a></h2>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Node {
+    value: i32,
+    next: Option&lt;Box&lt;Node&gt;&gt;,  // Box allows Node to be recursively defined
+}
+
+impl Node {
+    fn print_list(&amp;self) {
+        let mut current = Some(self);
+        while let Some(node) = current {
+            print!("{} ", node.value);
+            current = node.next.as_deref();  // Move to the next node
+        }
+        println!();
+    }
+
+    fn append(&amp;mut self, value: i32) {
+        let mut current = self;
+        while let Some(ref mut next) = current.next {
+            current = next;
+        }
+        current.next = Some(Box::new(Node {  // Allocate new node on the heap
+            value,
+            next: None,
+        }));
+    }
+}
+
+fn main() {
+    let mut node = Node {
+        value: 1,
+        next: Some(Box::new(Node {
+            value: 2,
+            next: Some(Box::new(Node {
+                value: 3,
+                next: None,
+            })),
+        })),
+    };
+
+    println!("Original list:");
+    node.print_list();
+
+    node.append(4);
+
+    println!("List after appending 4:");
+    node.print_list();
+}</code></pre></pre>
+<h3 id="what-is-box"><a class="header" href="#what-is-box">What is Box?</a></h3>
+<p>In Rust, <code>Box</code> is a smart pointer that provides ownership of a heap-allocated value. It’s used when you need to store data on the heap rather than the stack. Here’s why <code>Box</code> is often used in linked lists:</p>
+<ul>
+<li>
+<p>Rust’s stack has a limited size and is meant for storing data that has a known, fixed size at compile time. Linked lists, however, can grow in size dynamically, making it impractical to allocate them entirely on the stack. <code>Box</code> allows you to allocate data on the heap, which is much more suitable for dynamically-sized data structures like linked lists.</p>
+</li>
+<li>
+<p>Linked lists are recursive data structures. Each node contains a reference (or <code>Box</code>) to another node. Without heap allocation, Rust wouldn’t be able to handle the indefinite size of these recursive types because they could lead to an infinitely recursive type definition.</p>
+<p>Box breaks this recursion by providing a way to allocate the nodes on the heap, where each <code>Box&lt;Node&gt;</code> holds a reference to another <code>Node</code>.</p>
+</li>
+<li>
+<p><code>Box</code> provides ownership of the data, ensuring that the memory is automatically cleaned up when the <code>Box</code> is dropped. This helps manage the memory for dynamically sized data structures without manual memory management.</p>
+</li>
+</ul>
+<h2 id="doubly-linked-lists"><a class="header" href="#doubly-linked-lists">Doubly Linked Lists</a></h2>
+<p>Each node contains a value and references to both the next and previous nodes. Similar to singly linked lists but with an additional reference for bidirectional traversal.</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+use std::cell::RefCell;
+use std::rc::Rc;
+
+// Define the Node struct
+#[derive(Debug)]
+struct Node&lt;T&gt; {
+    value: T,
+    next: Option&lt;Rc&lt;RefCell&lt;Node&lt;T&gt;&gt;&gt;&gt;,
+    prev: Option&lt;Rc&lt;RefCell&lt;Node&lt;T&gt;&gt;&gt;&gt;,
+}
+
+// Define the LinkedList struct
+#[derive(Debug)]
+struct LinkedList&lt;T&gt; {
+    head: Option&lt;Rc&lt;RefCell&lt;Node&lt;T&gt;&gt;&gt;&gt;,
+    tail: Option&lt;Rc&lt;RefCell&lt;Node&lt;T&gt;&gt;&gt;&gt;,
+}
+
+impl&lt;T&gt; LinkedList&lt;T&gt;
+where
+    T: std::fmt::Debug,
+{
+    fn new() -&gt; Self {
+        LinkedList {
+            head: None,
+            tail: None,
+        }
+    }
+
+    fn append(&amp;mut self, value: T) {
+        let new_node = Rc::new(RefCell::new(Node {
+            value,
+            next: None,
+            prev: self.tail.clone(),
+        }));
+
+        match self.tail.take() {
+            Some(tail) =&gt; {
+                tail.borrow_mut().next = Some(new_node.clone());
+            }
+            None =&gt; {
+                self.head = Some(new_node.clone());
+            }
+        }
+
+        self.tail = Some(new_node);
+    }
+
+    fn prepend(&amp;mut self, value: T) {
+        let new_node = Rc::new(RefCell::new(Node {
+            value,
+            next: self.head.clone(),
+            prev: None,
+        }));
+
+        match self.head.take() {
+            Some(head) =&gt; {
+                head.borrow_mut().prev = Some(new_node.clone());
+            }
+            None =&gt; {
+                self.tail = Some(new_node.clone());
+            }
+        }
+
+        self.head = Some(new_node);
+    }
+
+    fn print(&amp;self) {
+        let mut current = self.head.clone();
+        while let Some(node) = current {
+            print!("{:?} ", node.borrow().value);
+            current = node.borrow().next.clone();
+        }
+        println!();
+    }
+}
+
+fn main() {
+    let mut list = LinkedList::new();
+    list.append(1);
+    list.append(2);
+    list.append(3);
+    list.prepend(0);
+
+    list.print(); // Output: 0 1 2 3
+}</code></pre></pre>
+<h3 id="explaining-the-code"><a class="header" href="#explaining-the-code">Explaining the code</a></h3>
+<ul>
+<li>
+<p><code>Rc</code> (Reference Counted) is a smart pointer that enables multiple ownership of the same data. It keeps track of the number of references to the data it points to. When the reference count drops to zero, the data is automatically de-allocated. Rc is used to allow multiple nodes to be shared between different parts of the list. This enables the nodes to be owned by more than one part of the list without copying the data.</p>
+</li>
+<li>
+<p><code>RefCell</code> (Reference Cell) provides interior mutability, allowing you to borrow data mutably even if the RefCell itself is immutably borrowed. It enforces borrowing rules at runtime instead of compile-time. <code>RefCell</code> is used to allow mutable access to the node's fields (<code>next</code> and <code>prev</code>) even though the <code>Rc</code> smart pointer provides shared ownership. This enables you to update the node's pointers while keeping the node shared.</p>
+</li>
+<li>
+<p><code>append</code> and <code>prepend</code> functions are used to add and remove nodes from the list. <code>append</code> adds a new node to the end of the list, while <code>prepend</code> adds a new node to the beginning of the list.</p>
+</li>
+</ul>
+<h2 id="why-are-linked-lists-important"><a class="header" href="#why-are-linked-lists-important">Why are Linked Lists important?</a></h2>
+<p>Linked lists are a fundamental data structure in computer science and are used in various scenarios. They are useful for maintaining a list of items that need to be accessed in a particular order. They can be used to implement various data structures, such as queues, stacks, and trees. They allow efficient insertions and deletions without needing to resize or reallocate memory like arrays do.</p>
+<p>Inserting or deleting an element in a linked list is generally O(1) if you have a reference to the node, whereas in arrays, it can be O(n) due to shifting elements.</p>
+<p>Linked lists encourage algorithmic thinking and problem-solving skills by requiring you to manage pointers and ensure data consistency and their commonly
+featured om technical interview questions.</p>
+<h2 id="conclusion-3"><a class="header" href="#conclusion-3">Conclusion</a></h2>
+<p>Understanding linked lists is crucial for a well-rounded knowledge of data structures. They offer unique advantages for dynamic memory management and efficient insertion and deletion, and they form the basis for more complex data structures. By mastering linked lists, you gain insights into memory management, performance trade-offs, and algorithmic design, all of which are essential skills in computer science and software development.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contact"><a class="header" href="#contact">Contact</a></h1>
 <p>Please contact me if you have any questions, feedback, or suggestions. Im active on all social media below.</p>
 <ul>

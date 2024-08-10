@@ -3,6 +3,7 @@
         "isize",
         "Linearithmic",
         "println",
+        "struct",
         "subarrays",
         "usize"
     ]

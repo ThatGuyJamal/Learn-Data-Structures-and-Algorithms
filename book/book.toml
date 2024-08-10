@@ -9,7 +9,7 @@ multilingual = true
 src = "src"
 
 [build]
-create-missing = false
+create-missing = true
 
 [output.html]
 preferred-dark-theme = "Ayu"
