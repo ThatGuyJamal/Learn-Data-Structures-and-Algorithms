@@ -4,7 +4,7 @@
 
 - [Getting Started](./lessons/1.md)
 - [Big O Notation](./lessons/2.md)
-- [Arrays and Vectors]()
+- [Arrays and Vectors](./lessons/3.md)
 - [Linked Lists]()
 - [Stacks and Queues]()
 - [Hash Maps and Hash Sets]()

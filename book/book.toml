@@ -1,3 +1,5 @@
+# https://rust-lang.github.io/mdBook/format/configuration/index.html
+
 [book]
 title = "Learning Data Structures and Algorithms"
 description = "Learn Data Structures and Algorithms in Rust - YouTube Series Outline"
@@ -10,7 +12,7 @@ src = "src"
 create-missing = false
 
 [output.html]
-preferred-dark-theme = "Coal"
+preferred-dark-theme = "Ayu"
 git-repository-url = "https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms"
 edit-url-template = "https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/{path}"
 
