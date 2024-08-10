@@ -6,7 +6,7 @@
 - [Big O Notation](./lessons/2.md)
 - [Arrays and Vectors](./lessons/3.md)
 - [Linked Lists](./lessons/4.md)
-- [Stacks and Queues]()
+- [Stacks and Queues](./lessons/5.md)
 - [Hash Maps and Hash Sets]()
 - [Binary Trees]()
 - [Binary Search Trees]()

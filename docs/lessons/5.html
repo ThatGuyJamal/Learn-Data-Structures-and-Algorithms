@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Getting Started - Learning Data Structures and Algorithms</title>
+        <title>Stacks and Queues - Learning Data Structures and Algorithms</title>
 
 
         <!-- Custom HTML head -->
@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html" class="active"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="../lessons/1.html"><strong aria-hidden="true">1.</strong> Getting Started</a></li><li class="chapter-item expanded "><a href="../lessons/2.html"><strong aria-hidden="true">2.</strong> Big O Notation</a></li><li class="chapter-item expanded "><a href="../lessons/3.html"><strong aria-hidden="true">3.</strong> Arrays and Vectors</a></li><li class="chapter-item expanded "><a href="../lessons/4.html"><strong aria-hidden="true">4.</strong> Linked Lists</a></li><li class="chapter-item expanded "><a href="../lessons/5.html" class="active"><strong aria-hidden="true">5.</strong> Stacks and Queues</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.</strong> Hash Maps and Hash Sets</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.</strong> Binary Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">8.</strong> Binary Search Trees</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.</strong> Heaps and Priority Queues</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">10.</strong> Graphs and Graph Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">11.</strong> Sorting Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">12.</strong> Searching Algorithms</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">13.</strong> Dynamic Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">14.</strong> Recursion and Backtracking</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">15.</strong> Final Project</div></li><li class="chapter-item expanded affix "><a href="../contact.html">Contact Me</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -150,7 +150,7 @@
                         <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/1.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://github.com/ThatGuyJamal/Learn-Data-Structures-and-Algorithms/edit/master/book/src/lessons/5.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
 
@@ -179,169 +179,145 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="getting-started"><a class="header" href="#getting-started">Getting Started</a></h1>
+                        <h1 id="stacks-and-queues"><a class="header" href="#stacks-and-queues">Stacks and Queues</a></h1>
 <h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
-<p>Lets walk through how to setup the Rust development environment and write our first Rust program.</p>
-<h2 id="installing-rust"><a class="header" href="#installing-rust">Installing Rust</a></h2>
-<p>To start coding in Rust, you need to install the Rust programming language and its associated tools.</p>
-<h3 id="step-1-install-rust"><a class="header" href="#step-1-install-rust">Step 1: Install Rust</a></h3>
-<ol>
-<li>
-<p>Open your terminal.</p>
-</li>
-<li>
-<p>Run the following command to install Rust using <code>rustup</code>, the Rust toolchain installer:</p>
-<pre><code class="language-sh">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-</code></pre>
-</li>
-<li>
-<p>Follow the on-screen instructions to complete the installation.</p>
-</li>
-</ol>
-<h3 id="step-2-configure-your-environment"><a class="header" href="#step-2-configure-your-environment">Step 2: Configure Your Environment</a></h3>
-<p>After installing Rust, you need to configure your development environment.</p>
-<ol>
-<li>
-<p>Add the Rust bin directory to your system's PATH:</p>
-<pre><code class="language-sh">source $HOME/.cargo/env
-</code></pre>
-</li>
-<li>
-<p>Verify the installation by checking the Rust version:</p>
-<pre><code class="language-sh">rustc --version
-</code></pre>
-</li>
-</ol>
-<h2 id="writing-your-first-rust-program"><a class="header" href="#writing-your-first-rust-program">Writing Your First Rust Program</a></h2>
-<p>Now that we have Rust installed, let's write our first Rust program.</p>
-<h3 id="step-1-create-a-new-project"><a class="header" href="#step-1-create-a-new-project">Step 1: Create a New Project</a></h3>
-<ol>
-<li>
-<p>Open your terminal.</p>
-</li>
-<li>
-<p>Create a new Rust project using <code>cargo</code>, Rust's package manager and build system:</p>
-<pre><code class="language-sh">cargo new hello_rust
-</code></pre>
-</li>
-<li>
-<p>Navigate to the project directory:</p>
-<pre><code class="language-sh">cd hello_rust
-</code></pre>
-</li>
-</ol>
-<h3 id="step-2-write-the-code"><a class="header" href="#step-2-write-the-code">Step 2: Write the Code</a></h3>
-<ol>
-<li>Open the <code>main.rs</code> file located in the <code>src</code> directory with your preferred code editor.</li>
-<li>Replace the content with the following code:</li>
-</ol>
-<pre><pre class="playground"><code class="language-rust">fn main() {
-   println!("Hello, Rust!");
-}</code></pre></pre>
-<h3 id="step-3-run-the-program"><a class="header" href="#step-3-run-the-program">Step 3: Run the Program</a></h3>
-<ol>
-<li>
-<p>Compile and run your Rust program using <code>cargo</code>:</p>
-<pre><code class="language-sh">cargo run
-</code></pre>
-</li>
-<li>
-<p>You should see the following output:</p>
-<pre><code class="language-sh">Hello, Rust!
-</code></pre>
-</li>
-</ol>
-<h2 id="basic-syntax-and-features-of-rust"><a class="header" href="#basic-syntax-and-features-of-rust">Basic Syntax and Features of Rust</a></h2>
-<p>Let's briefly go over some basic syntax and features of Rust.</p>
-<h3 id="variables"><a class="header" href="#variables">Variables</a></h3>
-<p>Rust variables are immutable by default. Use <code>let</code> to declare variables.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let x = 5;
-
-println!("The value of x is: {}", x);
-<span class="boring">}</span></code></pre></pre>
-<p>To make a variable mutable, use mut.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let mut y = 5;
-
-y = 6;
-
-println!("The value of y is: {}", y);
-<span class="boring">}</span></code></pre></pre>
-<h3 id="functions"><a class="header" href="#functions">Functions</a></h3>
-<p>Functions are declared using the fn keyword.</p>
-<pre><pre class="playground"><code class="language-rust">fn main() {
-    println!("Hello, Rust!");
+<p>In this lesson, we'll explore stacks and queues, their properties and usage in Rust.</p>
+<h3 id="key-points"><a class="header" href="#key-points">Key Points</a></h3>
+<ul>
+<li>Stacks: A data structure that stores elements in a last-in-first-out (LIFO) order.</li>
+<li>Queues: A data structure that stores elements in a first-in-first-out (FIFO) order.</li>
+</ul>
+<h2 id="stacks"><a class="header" href="#stacks">Stacks</a></h2>
+<p>A stack is a collection of elements that follows the Last In, First Out (LIFO) principle. The last element added is the first one to be removed. This is the opposite of a queue, where the first element added is the first one to be removed.</p>
+<pre><pre class="playground"><code class="language-rust">#[derive(Debug)]
+struct Stack&lt;T&gt; {
+    items: Vec&lt;T&gt;,
 }
 
-fn add(a: i32, b: i32) -&gt; i32 {
-    a + b
-}</code></pre></pre>
-<h3 id="control-flow"><a class="header" href="#control-flow">Control Flow</a></h3>
-<p>Rust supports typical control flow constructs such as if, else, and loop.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>let number = 6;
-
-if number % 2 == 0 {
-    println!("The number is even.");
-} else {
-    println!("The number is odd.");
-}
-
-let mut counter = 0;
-let result = loop {
-    counter += 1;
-    if counter == 10 {
-        break counter * 2;
+impl&lt;T&gt; Stack&lt;T&gt; {
+    fn new() -&gt; Self {
+        Stack { items: Vec::new() }
     }
-};
-println!("The result is: {}", result);
-<span class="boring">}</span></code></pre></pre>
-<h3 id="comments"><a class="header" href="#comments">Comments</a></h3>
-<p>Rust supports single-line and multi-line comments.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// This is a single-line comment
 
-/* This is a
-multi-line comment
-*/
-<span class="boring">}</span></code></pre></pre>
-<h3 id="data-types"><a class="header" href="#data-types">Data Types</a></h3>
-<p>Rust supports several data types, including integers, floating-point numbers, booleans, strings, arrays, and tuples.</p>
-<pre><pre class="playground"><code class="language-rust"><span class="boring">#![allow(unused)]
-</span><span class="boring">fn main() {
-</span>// i32 is an integer type
-let x: i32 = 5;
+    fn push(&amp;mut self, item: T) {
+        self.items.push(item);
+    }
 
-// &amp;str is a string slice
-let a: &amp;str = "Hello, Rust!";
+    fn pop(&amp;mut self) -&gt; Option&lt;T&gt; {
+        self.items.pop()
+    }
 
-// [i32; 3] is an array of 3 integers
-let b: [i32; 3] = [1, 2, 3];
+    fn peek(&amp;self) -&gt; Option&lt;&amp;T&gt; {
+        self.items.last()
+    }
 
-// (i32, &amp;str) is a tuple of an integer and a string
-let c: (i32, &amp;str) = (1, "hello");
+    fn is_empty(&amp;self) -&gt; bool {
+        self.items.is_empty()
+    }
+}
 
-// bool is a boolean type
-let d: bool = true;
-<span class="boring">}</span></code></pre></pre>
+fn main() {
+    let mut stack = Stack::new();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    println!("Stack: {:?}", stack);
+    println!("Top item: {:?}", stack.peek());
+
+    while let Some(item) = stack.pop() {
+        println!("Popped: {}", item);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation"><a class="header" href="#code-explanation">Code Explanation</a></h3>
+<ul>
+<li><code>push</code> adds an element to the top of the stack.</li>
+<li><code>pop</code> removes the top element from the stack.</li>
+<li><code>peek</code> returns a reference to the top element of the stack.</li>
+<li><code>is_empty</code> returns <code>true</code> if the stack is empty, and <code>false</code> otherwise.</li>
+</ul>
+<h3 id="queues"><a class="header" href="#queues">Queues</a></h3>
+<p>A queue is a collection of elements that follows the First In, First Out (FIFO) principle. The first element added is the first one to be removed. This is the opposite of a stack, where the last element added is the first one to be removed.</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::VecDeque;
+
+#[derive(Debug)]
+struct Queue&lt;T&gt; {
+    items: VecDeque&lt;T&gt;,
+}
+
+impl&lt;T&gt; Queue&lt;T&gt; {
+    fn new() -&gt; Self {
+        Queue {
+            items: VecDeque::new(),
+        }
+    }
+
+    fn enqueue(&amp;mut self, item: T) {
+        self.items.push_back(item);
+    }
+
+    fn dequeue(&amp;mut self) -&gt; Option&lt;T&gt; {
+        self.items.pop_front()
+    }
+
+    fn peek(&amp;self) -&gt; Option&lt;&amp;T&gt; {
+        self.items.front()
+    }
+
+    fn is_empty(&amp;self) -&gt; bool {
+        self.items.is_empty()
+    }
+}
+
+fn main() {
+    let mut queue = Queue::new();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    println!("Queue: {:?}", queue);
+    println!("Front item: {:?}", queue.peek());
+
+    while let Some(item) = queue.dequeue() {
+        println!("Dequeued: {}", item);
+    }
+}</code></pre></pre>
+<h3 id="code-explanation-1"><a class="header" href="#code-explanation-1">Code Explanation</a></h3>
+<ul>
+<li><code>enqueue</code> adds an element to the end of the queue.</li>
+<li><code>dequeue</code> removes the first element and returns it.</li>
+<li><code>peek</code> returns the first element without removing it.</li>
+<li><code>is_empty</code> checks if the queue is empty.</li>
+</ul>
+<h2 id="real-world-examples"><a class="header" href="#real-world-examples">Real World Examples</a></h2>
+<h3 id="stacks-1"><a class="header" href="#stacks-1">Stacks</a></h3>
+<p>When you browse the web, your browser keeps track of the pages you've visited in a stack-like structure. This allows you to go back to the previous page by popping the most recent page off the stack.</p>
+<p>How It Works:</p>
+<ul>
+<li><code>Push</code>: When you navigate to a new page, the URL is pushed onto the stack.</li>
+<li><code>Pop</code>: When you hit the "Back" button, the browser pops the most recent URL from the stack and navigates to it.</li>
+<li><code>Peek</code>: You can see the current URL on top of the stack without removing it.</li>
+</ul>
+<h3 id="queues-1"><a class="header" href="#queues-1">Queues</a></h3>
+<p>A print spooler manages print jobs sent to a printer. It uses a queue to ensure that print jobs are processed in the order they are received.</p>
+<p>How It Works:</p>
+<ul>
+<li><code>Enqueue</code>: When a new print job is submitted, it is added to the end of the queue.</li>
+<li><code>Dequeue</code>: The print spooler processes the print jobs from the front of the queue, printing them one by one.</li>
+<li><code>Peek</code>: You can check the next job to be printed without removing it from the queue.</li>
+</ul>
 <h2 id="conclusion"><a class="header" href="#conclusion">Conclusion</a></h2>
-<p>In this episode, we've set up the Rust development environment, explored some basic syntax and features of Rust, and wrote our first Rust program. In the next episode, we will dive into understanding Big O Notation and analyzing time complexity.</p>
-<p>Thank you for joining me in this journey to learn Rust and computer science concepts. Stay tuned for the next episode!</p>
+<p>Stacks and queues are essential for managing data in various applications. By implementing these structures in Rust, you can handle data efficiently and understand fundamental programming concepts better.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../lessons/4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="../lessons/2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../contact.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -351,11 +327,11 @@ let d: bool = true;
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../lessons/4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="../lessons/2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../contact.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
