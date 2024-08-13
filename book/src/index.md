@@ -1,11 +1,6 @@
-# Introduction to Data Structures and Algorithms
+# About this book
 
-## Hello World!
-
-Thanks for reading this book on Data Structures and Algorithms. I hope you enjoy it!
-
-This book is written by [CodingWithJamal](https://x.com/codingwithjamal). It's a `text` version of
-the YouTube series [Data Structures and Algorithms in Rust - YouTube Series](https://www.youtube.com/playlist?list=PLl0-VFGqwyIvRpNnBcypGKITG2gRip1QD).
+Written by [CodingWithJamal](https://x.com/codingwithjamal).
 
 ## What You Will Learn
 
