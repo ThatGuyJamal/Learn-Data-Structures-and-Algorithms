@@ -13,6 +13,9 @@ const analyticsScript = `
 
 async function injectAnalyticsScript() {
 	try {
+		// Check if the target file exists
+		await fs.access(targetFile);
+
 		// Load the existing HTML
 		const data = await fs.readFile(targetFile, "utf8");
 		const $ = cheerio.load(data);
