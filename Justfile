@@ -6,6 +6,8 @@ run-lesson:
 
 build-book:
     mdbook build ./book
+    npm run inject-analytics
+    @echo "Book ready to deploy!"
 
 fmt:
     cargo fmt
