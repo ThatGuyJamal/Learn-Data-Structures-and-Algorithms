@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en" class="light" dir="ltr"><head>
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Introduction - Learn Data Structures and Algorithms</title>
@@ -28,9 +30,7 @@
 
         <!-- Custom theme stylesheets -->
 
-    
-<script src="https://beamanalytics.b-cdn.net/beam.min.js" data-token="bf73f66b-6d2b-446b-88bd-d7feda0d8f94" async=""></script>
-</head>
+    </head>
     <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
@@ -231,7 +231,7 @@ ideal for learning data structures and algorithms.</p>
 </ul>
 <p>Stay tuned for the next lesson, where we will set up our Rust environment and write our first Rust program. This journey will be challenging but rewarding, and by the end of this series, you will have a deep understanding of data structures and algorithms and how to implement them in Rust.</p>
 <p>Thank you for joining me, and I look forward to embarking on this learning journey with you!</p>
-<hr>
+<hr />
 <p>Feel free to reach out if you have any questions or need further assistance. Happy learning!</p>
 
                     </main>
@@ -257,6 +257,22 @@ ideal for learning data structures and algorithms.</p>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
         <script>
@@ -285,6 +301,5 @@ ideal for learning data structures and algorithms.</p>
 
 
     </div>
-    
-
-</body></html>
+    </body>
+</html>
